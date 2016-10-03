@@ -4,8 +4,9 @@
 target 'CheckSelfPost' do
 
 use_frameworks!
-pod 'FBSDKCoreKit'
-
+pod 'FacebookCore'
+pod 'FacebookLogin'
+pod 'FacebookShare'
 
   target 'CheckSelfPostTests' do
     inherit! :search_paths
