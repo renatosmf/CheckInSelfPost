@@ -47,11 +47,33 @@ class CSPLoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     }
     
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
-        NSLog("Logged")
     
-        CSPFBLoginManager.returnUserData()
-        CSPFBLoginManager.checkPublishPermissions(vc: self)
-
+        if error != nil {
+            NSLog("Error at try make Login")
+            
+            let alert = UIAlertController.init(title: "Error", message: "Falha ao realizar login no Facebook.", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction.init(title: "Ok!", style: .cancel, handler: { (_) in
+                NSLog("ok")
+                
+            }))
+            
+            self.present(alert, animated: true, completion: nil)
+            
+            
+        }else if result.isCancelled {
+            NSLog("Login Cancelled")
+            
+            
+        }else{
+            
+            NSLog("Logged")
+            
+            CSPFBLoginManager.returnUserData()
+            
+            CSPFBLoginManager.checkPublishPermissions(vc: self)
+            
+        }
     }
     
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {

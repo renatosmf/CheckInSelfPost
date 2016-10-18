@@ -8,16 +8,6 @@ pod 'FacebookCore'
 pod 'FacebookLogin'
 pod 'FacebookShare'
 
-  target 'CSPTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'CSPUITests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
 end
 
 
