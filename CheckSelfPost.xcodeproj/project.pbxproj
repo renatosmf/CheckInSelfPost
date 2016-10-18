@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2D2ADB69BE3C2F27D67EF4D4 /* Pods_CheckSelfPostTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7090F27A279459F1D36D665 /* Pods_CheckSelfPostTests.framework */; };
+		731B100F1DB1DDE5008AB810 /* CSPLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731B100E1DB1DDE5008AB810 /* CSPLoginViewController.swift */; };
 		73FE03531DA1FAC0003C321E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FE03521DA1FAC0003C321E /* AppDelegate.swift */; };
-		73FE03551DA1FAC0003C321E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FE03541DA1FAC0003C321E /* ViewController.swift */; };
 		73FE03581DA1FAC0003C321E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73FE03561DA1FAC0003C321E /* Main.storyboard */; };
 		73FE035A1DA1FAC0003C321E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73FE03591DA1FAC0003C321E /* Assets.xcassets */; };
 		73FE035D1DA1FAC0003C321E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73FE035B1DA1FAC0003C321E /* LaunchScreen.storyboard */; };
@@ -41,9 +41,9 @@
 		1F404F29FAB99EAEA121717D /* Pods-CheckSelfPostTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheckSelfPostTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CheckSelfPostTests/Pods-CheckSelfPostTests.release.xcconfig"; sourceTree = "<group>"; };
 		2A01C6FD5D95065C16CF5C93 /* Pods_CheckSelfPost.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CheckSelfPost.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		669375BDBD34B3B49A14191E /* Pods-CheckSelfPostUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheckSelfPostUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CheckSelfPostUITests/Pods-CheckSelfPostUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		731B100E1DB1DDE5008AB810 /* CSPLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSPLoginViewController.swift; sourceTree = "<group>"; };
 		73FE034F1DA1FAC0003C321E /* CheckSelfPost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheckSelfPost.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73FE03521DA1FAC0003C321E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		73FE03541DA1FAC0003C321E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		73FE03571DA1FAC0003C321E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		73FE03591DA1FAC0003C321E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		73FE035C1DA1FAC0003C321E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -89,6 +89,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		731B100B1DB1DD6F008AB810 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		731B100C1DB1DD75008AB810 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				731B100E1DB1DDE5008AB810 /* CSPLoginViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		731B100D1DB1DD82008AB810 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
 		73FE03461DA1FAC0003C321E = {
 			isa = PBXGroup;
 			children = (
@@ -115,7 +137,9 @@
 			isa = PBXGroup;
 			children = (
 				73FE03521DA1FAC0003C321E /* AppDelegate.swift */,
-				73FE03541DA1FAC0003C321E /* ViewController.swift */,
+				731B100B1DB1DD6F008AB810 /* Model */,
+				731B100C1DB1DD75008AB810 /* ViewControllers */,
+				731B100D1DB1DD82008AB810 /* Services */,
 				73FE03561DA1FAC0003C321E /* Main.storyboard */,
 				73FE03591DA1FAC0003C321E /* Assets.xcassets */,
 				73FE035B1DA1FAC0003C321E /* LaunchScreen.storyboard */,
@@ -436,8 +460,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				73FE03551DA1FAC0003C321E /* ViewController.swift in Sources */,
 				73FE03531DA1FAC0003C321E /* AppDelegate.swift in Sources */,
+				731B100F1DB1DDE5008AB810 /* CSPLoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -510,6 +534,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -538,6 +563,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -559,6 +585,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -579,6 +606,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -587,13 +615,16 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A4ECBF8BA096DC2A51E27BDA /* Pods-CheckSelfPost.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = W2JS3YXSKF;
 				INFOPLIST_FILE = CheckSelfPost/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = br.com.csp.CheckSelfPost;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.csp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -601,13 +632,16 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8A2EEAC93F6AFFE8C03F29A9 /* Pods-CheckSelfPost.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = W2JS3YXSKF;
 				INFOPLIST_FILE = CheckSelfPost/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = br.com.csp.CheckSelfPost;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.csp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
