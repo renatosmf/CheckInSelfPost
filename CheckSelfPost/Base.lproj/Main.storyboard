@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="7sX-gK-WoM">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,9 +15,10 @@
                         <viewControllerLayoutGuide type="bottom" id="EzY-i6-LB3"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="OrG-Le-Kji">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="jhoEamanda" translatesAutoresizingMaskIntoConstraints="NO" id="mxz-JC-Sxl"/>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8uz-OB-QUx" customClass="FBSDKLoginButton">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="hrd-c9-FFC"/>
@@ -28,20 +28,27 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="EzY-i6-LB3" firstAttribute="top" secondItem="mxz-JC-Sxl" secondAttribute="bottom" id="2rW-26-dpD"/>
+                            <constraint firstAttribute="trailing" secondItem="mxz-JC-Sxl" secondAttribute="trailing" id="53H-fW-rcu"/>
+                            <constraint firstItem="mxz-JC-Sxl" firstAttribute="top" secondItem="OrG-Le-Kji" secondAttribute="top" id="7Ht-W6-hvR"/>
                             <constraint firstItem="8uz-OB-QUx" firstAttribute="leading" secondItem="OrG-Le-Kji" secondAttribute="leadingMargin" constant="39" id="9ch-zG-lmu"/>
                             <constraint firstItem="EzY-i6-LB3" firstAttribute="top" secondItem="8uz-OB-QUx" secondAttribute="bottom" constant="140" id="AyC-Rv-Y2B"/>
                             <constraint firstAttribute="trailingMargin" secondItem="8uz-OB-QUx" secondAttribute="trailing" constant="39" id="KSd-BR-rQ5"/>
                             <constraint firstItem="8uz-OB-QUx" firstAttribute="centerX" secondItem="OrG-Le-Kji" secondAttribute="centerX" id="bD1-yP-sYn"/>
+                            <constraint firstItem="mxz-JC-Sxl" firstAttribute="leading" secondItem="OrG-Le-Kji" secondAttribute="leading" id="pJf-pX-3hQ"/>
                         </constraints>
                     </view>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="btFBLogin" destination="8uz-OB-QUx" id="vFG-10-lhb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W6Q-Er-WMd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="562" y="397"/>
+            <point key="canvasLocation" x="-250.72463768115944" y="260.86956521739131"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="jhoEamanda" width="414" height="736"/>
+    </resources>
 </document>
