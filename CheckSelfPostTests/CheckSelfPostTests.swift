@@ -1,15 +1,15 @@
 //
-//  CheckSelfPostTests.swift
-//  CheckSelfPostTests
+//  CSPTests.swift
+//  CSPTests
 //
 //  Created by Renato Machado on 10/2/16.
 //  Copyright © 2016 Renato Machado. All rights reserved.
 //
 
 import XCTest
-@testable import CheckSelfPost
+@testable import CSP
 
-class CheckSelfPostTests: XCTestCase {
+class CSPTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

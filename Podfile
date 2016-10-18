@@ -1,19 +1,19 @@
 # Uncomment this line to define a global platform for your project
 #platform :ios, '9.0'
 
-target 'CheckSelfPost' do
+target 'CSP' do
 
 use_frameworks!
 pod 'FacebookCore'
 pod 'FacebookLogin'
 pod 'FacebookShare'
 
-  target 'CheckSelfPostTests' do
+  target 'CSPTests' do
     inherit! :search_paths
     # Pods for testing
   end
 
-  target 'CheckSelfPostUITests' do
+  target 'CSPUITests' do
     inherit! :search_paths
     # Pods for testing
   end

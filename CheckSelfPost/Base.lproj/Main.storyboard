@@ -2,14 +2,13 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="7sX-gK-WoM">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Login View Controller-->
         <scene sceneID="fwF-lV-fVC">
             <objects>
-                <viewController id="7sX-gK-WoM" customClass="CSPLoginViewController" customModule="CheckSelfPost" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="7sX-gK-WoM" customClass="CSPLoginViewController" customModule="CSP" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qbc-XP-fsi"/>
                         <viewControllerLayoutGuide type="bottom" id="EzY-i6-LB3"/>
@@ -19,29 +18,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="jhoEamanda" translatesAutoresizingMaskIntoConstraints="NO" id="mxz-JC-Sxl"/>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8uz-OB-QUx" customClass="FBSDKLoginButton">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="hrd-c9-FFC"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="EzY-i6-LB3" firstAttribute="top" secondItem="mxz-JC-Sxl" secondAttribute="bottom" id="2rW-26-dpD"/>
                             <constraint firstAttribute="trailing" secondItem="mxz-JC-Sxl" secondAttribute="trailing" id="53H-fW-rcu"/>
                             <constraint firstItem="mxz-JC-Sxl" firstAttribute="top" secondItem="OrG-Le-Kji" secondAttribute="top" id="7Ht-W6-hvR"/>
-                            <constraint firstItem="8uz-OB-QUx" firstAttribute="leading" secondItem="OrG-Le-Kji" secondAttribute="leadingMargin" constant="39" id="9ch-zG-lmu"/>
-                            <constraint firstItem="EzY-i6-LB3" firstAttribute="top" secondItem="8uz-OB-QUx" secondAttribute="bottom" constant="140" id="AyC-Rv-Y2B"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="8uz-OB-QUx" secondAttribute="trailing" constant="39" id="KSd-BR-rQ5"/>
-                            <constraint firstItem="8uz-OB-QUx" firstAttribute="centerX" secondItem="OrG-Le-Kji" secondAttribute="centerX" id="bD1-yP-sYn"/>
                             <constraint firstItem="mxz-JC-Sxl" firstAttribute="leading" secondItem="OrG-Le-Kji" secondAttribute="leading" id="pJf-pX-3hQ"/>
                         </constraints>
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
-                    <connections>
-                        <outlet property="btFBLogin" destination="8uz-OB-QUx" id="vFG-10-lhb"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W6Q-Er-WMd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -1,6 +1,6 @@
 //
-//  CheckSelfPostUITests.swift
-//  CheckSelfPostUITests
+//  CSPUITests.swift
+//  CSPUITests
 //
 //  Created by Renato Machado on 10/2/16.
 //  Copyright © 2016 Renato Machado. All rights reserved.
@@ -8,7 +8,7 @@
 
 import XCTest
 
-class CheckSelfPostUITests: XCTestCase {
+class CSPUITests: XCTestCase {
         
     override func setUp() {
         super.setUp()

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		087286A41DB66F5C00FB76CA /* CSPFBLoginManeger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087286A31DB66F5C00FB76CA /* CSPFBLoginManeger.swift */; };
 		2D2ADB69BE3C2F27D67EF4D4 /* Pods_CheckSelfPostTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7090F27A279459F1D36D665 /* Pods_CheckSelfPostTests.framework */; };
 		731B100F1DB1DDE5008AB810 /* CSPLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731B100E1DB1DDE5008AB810 /* CSPLoginViewController.swift */; };
 		73FE03531DA1FAC0003C321E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FE03521DA1FAC0003C321E /* AppDelegate.swift */; };
@@ -38,20 +39,22 @@
 
 /* Begin PBXFileReference section */
 		04947A7D6765C322A4478B17 /* Pods-CheckSelfPostTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheckSelfPostTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CheckSelfPostTests/Pods-CheckSelfPostTests.debug.xcconfig"; sourceTree = "<group>"; };
+		087286A11DB65D3200FB76CA /* CSP.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CSP.entitlements; sourceTree = "<group>"; };
+		087286A31DB66F5C00FB76CA /* CSPFBLoginManeger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSPFBLoginManeger.swift; sourceTree = "<group>"; };
 		1F404F29FAB99EAEA121717D /* Pods-CheckSelfPostTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheckSelfPostTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CheckSelfPostTests/Pods-CheckSelfPostTests.release.xcconfig"; sourceTree = "<group>"; };
 		2A01C6FD5D95065C16CF5C93 /* Pods_CheckSelfPost.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CheckSelfPost.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		669375BDBD34B3B49A14191E /* Pods-CheckSelfPostUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheckSelfPostUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CheckSelfPostUITests/Pods-CheckSelfPostUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		731B100E1DB1DDE5008AB810 /* CSPLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = CSPLoginViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		73FE034F1DA1FAC0003C321E /* CheckSelfPost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheckSelfPost.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		73FE034F1DA1FAC0003C321E /* CSP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CSP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73FE03521DA1FAC0003C321E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AppDelegate.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		73FE03571DA1FAC0003C321E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		73FE03591DA1FAC0003C321E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		73FE035C1DA1FAC0003C321E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		73FE035E1DA1FAC0003C321E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		73FE03631DA1FAC0003C321E /* CheckSelfPostTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CheckSelfPostTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		73FE03631DA1FAC0003C321E /* CSPTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CSPTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		73FE03671DA1FAC0003C321E /* CheckSelfPostTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = CheckSelfPostTests.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		73FE03691DA1FAC0003C321E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		73FE036E1DA1FAC0003C321E /* CheckSelfPostUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CheckSelfPostUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		73FE036E1DA1FAC0003C321E /* CSPUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CSPUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		73FE03721DA1FAC0003C321E /* CheckSelfPostUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = CheckSelfPostUITests.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		73FE03741DA1FAC0003C321E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A2EEAC93F6AFFE8C03F29A9 /* Pods-CheckSelfPost.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheckSelfPost.release.xcconfig"; path = "Pods/Target Support Files/Pods-CheckSelfPost/Pods-CheckSelfPost.release.xcconfig"; sourceTree = "<group>"; };
@@ -89,6 +92,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		087286A21DB66F2700FB76CA /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				087286A31DB66F5C00FB76CA /* CSPFBLoginManeger.swift */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
 		731B100B1DB1DD6F008AB810 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -114,6 +125,7 @@
 		73FE03461DA1FAC0003C321E = {
 			isa = PBXGroup;
 			children = (
+				087286A11DB65D3200FB76CA /* CSP.entitlements */,
 				73FE03511DA1FAC0003C321E /* CheckSelfPost */,
 				73FE03661DA1FAC0003C321E /* CheckSelfPostTests */,
 				73FE03711DA1FAC0003C321E /* CheckSelfPostUITests */,
@@ -126,9 +138,9 @@
 		73FE03501DA1FAC0003C321E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				73FE034F1DA1FAC0003C321E /* CheckSelfPost.app */,
-				73FE03631DA1FAC0003C321E /* CheckSelfPostTests.xctest */,
-				73FE036E1DA1FAC0003C321E /* CheckSelfPostUITests.xctest */,
+				73FE034F1DA1FAC0003C321E /* CSP.app */,
+				73FE03631DA1FAC0003C321E /* CSPTests.xctest */,
+				73FE036E1DA1FAC0003C321E /* CSPUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -140,8 +152,9 @@
 				731B100B1DB1DD6F008AB810 /* Model */,
 				731B100C1DB1DD75008AB810 /* ViewControllers */,
 				731B100D1DB1DD82008AB810 /* Services */,
-				73FE03561DA1FAC0003C321E /* Main.storyboard */,
+				087286A21DB66F2700FB76CA /* Utils */,
 				73FE03591DA1FAC0003C321E /* Assets.xcassets */,
+				73FE03561DA1FAC0003C321E /* Main.storyboard */,
 				73FE035B1DA1FAC0003C321E /* LaunchScreen.storyboard */,
 				73FE035E1DA1FAC0003C321E /* Info.plist */,
 			);
@@ -192,9 +205,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		73FE034E1DA1FAC0003C321E /* CheckSelfPost */ = {
+		73FE034E1DA1FAC0003C321E /* CSP */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 73FE03771DA1FAC0003C321E /* Build configuration list for PBXNativeTarget "CheckSelfPost" */;
+			buildConfigurationList = 73FE03771DA1FAC0003C321E /* Build configuration list for PBXNativeTarget "CSP" */;
 			buildPhases = (
 				0B654EC21D5A6202D5EE0BA9 /* [CP] Check Pods Manifest.lock */,
 				1C3EAB7C7484BACDD35AB5BD /* [CP] Check Pods Manifest.lock */,
@@ -210,14 +223,14 @@
 			);
 			dependencies = (
 			);
-			name = CheckSelfPost;
+			name = CSP;
 			productName = CheckSelfPost;
-			productReference = 73FE034F1DA1FAC0003C321E /* CheckSelfPost.app */;
+			productReference = 73FE034F1DA1FAC0003C321E /* CSP.app */;
 			productType = "com.apple.product-type.application";
 		};
-		73FE03621DA1FAC0003C321E /* CheckSelfPostTests */ = {
+		73FE03621DA1FAC0003C321E /* CSPTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 73FE037A1DA1FAC0003C321E /* Build configuration list for PBXNativeTarget "CheckSelfPostTests" */;
+			buildConfigurationList = 73FE037A1DA1FAC0003C321E /* Build configuration list for PBXNativeTarget "CSPTests" */;
 			buildPhases = (
 				456A44F6E3E083C75B88A3FC /* [CP] Check Pods Manifest.lock */,
 				0E609DC7987C0A7BA8A86659 /* [CP] Check Pods Manifest.lock */,
@@ -234,14 +247,14 @@
 			dependencies = (
 				73FE03651DA1FAC0003C321E /* PBXTargetDependency */,
 			);
-			name = CheckSelfPostTests;
+			name = CSPTests;
 			productName = CheckSelfPostTests;
-			productReference = 73FE03631DA1FAC0003C321E /* CheckSelfPostTests.xctest */;
+			productReference = 73FE03631DA1FAC0003C321E /* CSPTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		73FE036D1DA1FAC0003C321E /* CheckSelfPostUITests */ = {
+		73FE036D1DA1FAC0003C321E /* CSPUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 73FE037D1DA1FAC0003C321E /* Build configuration list for PBXNativeTarget "CheckSelfPostUITests" */;
+			buildConfigurationList = 73FE037D1DA1FAC0003C321E /* Build configuration list for PBXNativeTarget "CSPUITests" */;
 			buildPhases = (
 				F333C79B5F79738FC8B875B0 /* [CP] Check Pods Manifest.lock */,
 				D602C8C33791A8B833113F41 /* [CP] Check Pods Manifest.lock */,
@@ -257,9 +270,9 @@
 			dependencies = (
 				73FE03701DA1FAC0003C321E /* PBXTargetDependency */,
 			);
-			name = CheckSelfPostUITests;
+			name = CSPUITests;
 			productName = CheckSelfPostUITests;
-			productReference = 73FE036E1DA1FAC0003C321E /* CheckSelfPostUITests.xctest */;
+			productReference = 73FE036E1DA1FAC0003C321E /* CSPUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -277,6 +290,11 @@
 						DevelopmentTeam = 39N9FX32MH;
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					73FE03621DA1FAC0003C321E = {
 						CreatedOnToolsVersion = 8.0;
@@ -294,7 +312,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 73FE034A1DA1FAC0003C321E /* Build configuration list for PBXProject "CheckSelfPost" */;
+			buildConfigurationList = 73FE034A1DA1FAC0003C321E /* Build configuration list for PBXProject "CSP" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -307,9 +325,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				73FE034E1DA1FAC0003C321E /* CheckSelfPost */,
-				73FE03621DA1FAC0003C321E /* CheckSelfPostTests */,
-				73FE036D1DA1FAC0003C321E /* CheckSelfPostUITests */,
+				73FE034E1DA1FAC0003C321E /* CSP */,
+				73FE03621DA1FAC0003C321E /* CSPTests */,
+				73FE036D1DA1FAC0003C321E /* CSPUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -606,6 +624,7 @@
 			files = (
 				73FE03531DA1FAC0003C321E /* AppDelegate.swift in Sources */,
 				731B100F1DB1DDE5008AB810 /* CSPLoginViewController.swift in Sources */,
+				087286A41DB66F5C00FB76CA /* CSPFBLoginManeger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -630,12 +649,12 @@
 /* Begin PBXTargetDependency section */
 		73FE03651DA1FAC0003C321E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 73FE034E1DA1FAC0003C321E /* CheckSelfPost */;
+			target = 73FE034E1DA1FAC0003C321E /* CSP */;
 			targetProxy = 73FE03641DA1FAC0003C321E /* PBXContainerItemProxy */;
 		};
 		73FE03701DA1FAC0003C321E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 73FE034E1DA1FAC0003C321E /* CheckSelfPost */;
+			target = 73FE034E1DA1FAC0003C321E /* CSP */;
 			targetProxy = 73FE036F1DA1FAC0003C321E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -761,6 +780,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CSP.entitlements;
 				DEVELOPMENT_TEAM = 39N9FX32MH;
 				INFOPLIST_FILE = CheckSelfPost/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -778,6 +798,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CSP.entitlements;
 				DEVELOPMENT_TEAM = 39N9FX32MH;
 				INFOPLIST_FILE = CheckSelfPost/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -801,7 +822,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.csp.CheckSelfPostTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CheckSelfPost.app/CheckSelfPost";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CSP.app/CSP";
 			};
 			name = Debug;
 		};
@@ -817,7 +838,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.csp.CheckSelfPostTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CheckSelfPost.app/CheckSelfPost";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CSP.app/CSP";
 			};
 			name = Release;
 		};
@@ -854,7 +875,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		73FE034A1DA1FAC0003C321E /* Build configuration list for PBXProject "CheckSelfPost" */ = {
+		73FE034A1DA1FAC0003C321E /* Build configuration list for PBXProject "CSP" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				73FE03751DA1FAC0003C321E /* Debug */,
@@ -863,7 +884,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		73FE03771DA1FAC0003C321E /* Build configuration list for PBXNativeTarget "CheckSelfPost" */ = {
+		73FE03771DA1FAC0003C321E /* Build configuration list for PBXNativeTarget "CSP" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				73FE03781DA1FAC0003C321E /* Debug */,
@@ -872,7 +893,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		73FE037A1DA1FAC0003C321E /* Build configuration list for PBXNativeTarget "CheckSelfPostTests" */ = {
+		73FE037A1DA1FAC0003C321E /* Build configuration list for PBXNativeTarget "CSPTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				73FE037B1DA1FAC0003C321E /* Debug */,
@@ -881,7 +902,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		73FE037D1DA1FAC0003C321E /* Build configuration list for PBXNativeTarget "CheckSelfPostUITests" */ = {
+		73FE037D1DA1FAC0003C321E /* Build configuration list for PBXNativeTarget "CSPUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				73FE037E1DA1FAC0003C321E /* Debug */,

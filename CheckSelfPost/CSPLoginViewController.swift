@@ -1,6 +1,6 @@
 //
 //  CSPLoginViewController.swift
-//  CheckSelfPost
+//  CSP
 //
 //  Created by Renato Machado on 10/15/16.
 //  Copyright © 2016 Renato Machado. All rights reserved.
@@ -11,16 +11,14 @@ import FBSDKLoginKit
 
 
 class CSPLoginViewController: UIViewController, FBSDKLoginButtonDelegate {
-
-    @IBOutlet weak var btFBLogin: FBSDKLoginButton!
     
+    let loginButton: FBSDKLoginButton = FBSDKLoginButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        btFBLogin.readPermissions = ["public_profile", "email", "user_friends"];
-        btFBLogin.delegate = self
+        drawFBbutton()
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,15 +26,38 @@ class CSPLoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+      
+    }
+    
+    private func drawFBbutton () {
+        
+        loginButton.readPermissions = CSPFBLoginManager.BT_READ_PERMISIONS
+        loginButton.delegate = self
+        
+        self.view.addSubview(loginButton)
+        loginButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        let horizontalConstraint = loginButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        let verticalConstraint = loginButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -50)
+        let widthConstraint = loginButton.widthAnchor.constraint(equalToConstant: self.view.frame.size.width - 40)
+        let heightConstraint = loginButton.heightAnchor.constraint(equalToConstant: 50)
+        NSLayoutConstraint.activate([horizontalConstraint, verticalConstraint, widthConstraint, heightConstraint])
+    }
+    
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
         NSLog("Logged")
-        
-        
-        
+    
+        CSPFBLoginManager.returnUserData()
+        CSPFBLoginManager.checkPublishPermissions(vc: self)
+
     }
     
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
         NSLog("Logout")
+    
+    
     }
    
     
@@ -46,7 +67,6 @@ class CSPLoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         return true
     }
 
-    
 
     /*
     // MARK: - Navigation
