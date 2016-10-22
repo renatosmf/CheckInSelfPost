@@ -110,7 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				087286A11DB65D3200FB76CA /* CSP.entitlements */,
-				73FE03511DA1FAC0003C321E /* CheckSelfPost */,
+				73FE03511DA1FAC0003C321E /* CSP */,
 				73FE03501DA1FAC0003C321E /* Products */,
 				A2A7574E52870E1BE1ED6D6B /* Pods */,
 				BD6F8EE962834E2262F43CDF /* Frameworks */,
@@ -127,7 +127,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		73FE03511DA1FAC0003C321E /* CheckSelfPost */ = {
+		73FE03511DA1FAC0003C321E /* CSP */ = {
 			isa = PBXGroup;
 			children = (
 				73FE03521DA1FAC0003C321E /* AppDelegate.swift */,
@@ -140,6 +140,7 @@
 				73FE035B1DA1FAC0003C321E /* LaunchScreen.storyboard */,
 				73FE035E1DA1FAC0003C321E /* Info.plist */,
 			);
+			name = CSP;
 			path = CheckSelfPost;
 			sourceTree = "<group>";
 		};
@@ -319,7 +320,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		1C3EAB7C7484BACDD35AB5BD /* [CP] Check Pods Manifest.lock */ = {
