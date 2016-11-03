@@ -69,9 +69,38 @@ class CSPLoginViewController: UIViewController, FBSDKLoginButtonDelegate {
             
             NSLog("Logged")
             
-            CSPFBLoginManager.returnUserData()
-            
-            CSPFBLoginManager.checkPublishPermissions(vc: self)
+            CSPFBLoginManager.returnUserData(callback: { (result) in
+                
+                if result != nil {
+                    
+                    CSPFBLoginManager.checkPublishPermissions(vc: self)
+                    
+                    let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+                    
+                    let nextViewController = storyBoard.instantiateViewController(withIdentifier: "homeVCIdentifier") as? CSPHomeViewController
+                    
+                    nextViewController?.initializeWithUser(user: result!)
+                    
+                    let navController = UINavigationController(rootViewController: nextViewController!)
+
+                    
+                    self.present(navController, animated:true, completion:nil)
+                    
+                    
+                }else{
+                    
+                    let alert = UIAlertController.init(title: "Error", message: "Falha ao acessar os dados do Usuario no Facebook.", preferredStyle: .alert)
+                    
+                    alert.addAction(UIAlertAction.init(title: "Ok!", style: .cancel, handler: { (_) in
+                        NSLog("ok")
+                        
+                    }))
+                    
+                    self.present(alert, animated: true, completion: nil)
+
+                }
+                
+            })
             
         }
     }

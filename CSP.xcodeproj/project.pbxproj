@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		087286A41DB66F5C00FB76CA /* CSPFBLoginManeger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087286A31DB66F5C00FB76CA /* CSPFBLoginManeger.swift */; };
 		731B100F1DB1DDE5008AB810 /* CSPLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731B100E1DB1DDE5008AB810 /* CSPLoginViewController.swift */; };
+		73C03B1D1DCA1656000B1C3B /* CSPFBUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C03B1C1DCA1656000B1C3B /* CSPFBUser.swift */; };
+		73C03B1F1DCA17C1000B1C3B /* CSPFBPictureProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C03B1E1DCA17C1000B1C3B /* CSPFBPictureProfile.swift */; };
+		73C03B211DCA2BA7000B1C3B /* CSPHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C03B201DCA2BA7000B1C3B /* CSPHomeViewController.swift */; };
+		73C03B231DCA324C000B1C3B /* CSPMenuOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C03B221DCA324C000B1C3B /* CSPMenuOptions.swift */; };
+		73C03B251DCABA7F000B1C3B /* CSPFBCoverPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C03B241DCABA7F000B1C3B /* CSPFBCoverPicture.swift */; };
 		73FE03531DA1FAC0003C321E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FE03521DA1FAC0003C321E /* AppDelegate.swift */; };
 		73FE03581DA1FAC0003C321E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73FE03561DA1FAC0003C321E /* Main.storyboard */; };
 		73FE035A1DA1FAC0003C321E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73FE03591DA1FAC0003C321E /* Assets.xcassets */; };
@@ -39,6 +44,11 @@
 		1454B883E65413990343439A /* Pods-CSP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CSP.release.xcconfig"; path = "Pods/Target Support Files/Pods-CSP/Pods-CSP.release.xcconfig"; sourceTree = "<group>"; };
 		2868DAF9BFA28945A21DCC6F /* Pods_CSP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CSP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		731B100E1DB1DDE5008AB810 /* CSPLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = CSPLoginViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		73C03B1C1DCA1656000B1C3B /* CSPFBUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSPFBUser.swift; sourceTree = "<group>"; };
+		73C03B1E1DCA17C1000B1C3B /* CSPFBPictureProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSPFBPictureProfile.swift; sourceTree = "<group>"; };
+		73C03B201DCA2BA7000B1C3B /* CSPHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSPHomeViewController.swift; sourceTree = "<group>"; };
+		73C03B221DCA324C000B1C3B /* CSPMenuOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSPMenuOptions.swift; sourceTree = "<group>"; };
+		73C03B241DCABA7F000B1C3B /* CSPFBCoverPicture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSPFBCoverPicture.swift; sourceTree = "<group>"; };
 		73FE034F1DA1FAC0003C321E /* CSP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CSP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73FE03521DA1FAC0003C321E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AppDelegate.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		73FE03571DA1FAC0003C321E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -80,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				087286A31DB66F5C00FB76CA /* CSPFBLoginManeger.swift */,
+				73C03B221DCA324C000B1C3B /* CSPMenuOptions.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -87,6 +98,9 @@
 		731B100B1DB1DD6F008AB810 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				73C03B1C1DCA1656000B1C3B /* CSPFBUser.swift */,
+				73C03B1E1DCA17C1000B1C3B /* CSPFBPictureProfile.swift */,
+				73C03B241DCABA7F000B1C3B /* CSPFBCoverPicture.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -95,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				731B100E1DB1DDE5008AB810 /* CSPLoginViewController.swift */,
+				73C03B201DCA2BA7000B1C3B /* CSPHomeViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -405,9 +420,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73C03B211DCA2BA7000B1C3B /* CSPHomeViewController.swift in Sources */,
 				73FE03531DA1FAC0003C321E /* AppDelegate.swift in Sources */,
+				73C03B1F1DCA17C1000B1C3B /* CSPFBPictureProfile.swift in Sources */,
+				73C03B251DCABA7F000B1C3B /* CSPFBCoverPicture.swift in Sources */,
+				73C03B231DCA324C000B1C3B /* CSPMenuOptions.swift in Sources */,
 				731B100F1DB1DDE5008AB810 /* CSPLoginViewController.swift in Sources */,
 				087286A41DB66F5C00FB76CA /* CSPFBLoginManeger.swift in Sources */,
+				73C03B1D1DCA1656000B1C3B /* CSPFBUser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -501,7 +521,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -546,7 +566,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";

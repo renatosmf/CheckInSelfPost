@@ -15,6 +15,8 @@ class CSPFBLoginManager: AnyObject {
     static public var BT_READ_PERMISIONS = ["public_profile", "email", "user_friends"]
     static private var PUBLISH_ACTIONS = "publish_actions"
     
+    static private let screenWidth = UIScreen.main.bounds.width
+    static private let screenHeight = UIScreen.main.bounds.height
     
     
    static func getFBCurrentToken() -> FBSDKAccessToken? {
@@ -25,21 +27,31 @@ class CSPFBLoginManager: AnyObject {
         return nil
     }
     
-   static func returnUserData()
+   static func returnUserData(callback: @escaping (CSPFBUser?) -> Void)
     {
-        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields":"id,interested_in,gender,birthday,email,age_range,name,picture.width(480).height(480)"])
+        let h = screenHeight
+        let w = screenWidth
+        
+        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields":"id,interested_in,gender,birthday,email,age_range,name,picture.width(480).height(480),cover.offset_x(\(w)).offset_y(\(h))"])
         graphRequest.start(completionHandler: { (connection, result, error) -> Void in
             
             if ((error) != nil)
             {
                 // Process error
                 print("\n\nError: \(error)")
+                callback(nil)
             }
             else
             {
                 print("\n\nfetched user: \(result!)")
                 let id : NSString = (result as? [String:AnyObject])?["id"] as! NSString
                 print("User ID is: \(id)")
+                
+                let fbUser = CSPFBUser(json: (result! as? [String:AnyObject])!)
+                print("FB USER INFO: \(fbUser)")
+                
+
+               callback(fbUser)
                 //etc...
             }
         })
@@ -52,6 +64,7 @@ class CSPFBLoginManager: AnyObject {
         if FBSDKAccessToken.current().hasGranted(PUBLISH_ACTIONS) {
             
             // Can make a publish
+            NSLog("Has Permitions!!")
             
         }else{
             
