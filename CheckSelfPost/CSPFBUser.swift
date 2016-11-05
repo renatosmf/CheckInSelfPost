@@ -19,30 +19,34 @@ class CSPFBUser: NSObject {
     var picture : CSPFBPictureProfile?
     var cover : CSPFBCoverPicture?
     
-    init(json: [String:AnyObject]) {
-        super.init()
-        
+   
+   static func parseObj(json: [String:AnyObject]) -> CSPFBUser {
+    
+        let user = CSPFBUser()
+    
         if let a = json["id"] as? String{
-            self.id = Int(a)
+            user.id = Int(a)
         }
         if let b = json["name"]{
-            self.name = b as? String
+            user.name = b as? String
         }
         if let c = json["email"]{
-            self.email = c as? String
+            user.email = c as? String
         }
         if let d = json["gender"]{
-            self.gender = d as? String
+            user.gender = d as? String
         }
         if let f = (json["age_range"] as! [String:AnyObject])["min"]{
-            self.age = f as? Int
+            user.age = f as? Int
         }
         if let g = json["picture"]{
-            self.picture = CSPFBPictureProfile.makeFromDictionaryToObject(jsonDic: g as! Dictionary<String, AnyObject>)
+            user.picture = CSPFBPictureProfile.makeFromDictionaryToObject(jsonDic: g as! Dictionary<String, AnyObject>)
         }
         if let h = json["cover"] {
-            self.cover = CSPFBCoverPicture().makeFromDictionaryToObject(jsonDic: h as! Dictionary<String, AnyObject>)
+            user.cover = CSPFBCoverPicture().makeFromDictionaryToObject(jsonDic: h as! Dictionary<String, AnyObject>)
         }
+    
+        return user
     }
     
     

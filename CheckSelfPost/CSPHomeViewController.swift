@@ -12,6 +12,7 @@ class CSPHomeViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     
     @IBOutlet weak var imgAvatarProfile: UIImageView!
+    @IBOutlet weak var imgCoverBackGround: UIImageView!
     
     @IBOutlet weak var lbProfileName: UILabel!
 
@@ -20,15 +21,17 @@ class CSPHomeViewController: UIViewController, UITableViewDelegate, UITableViewD
     private var user : CSPFBUser!
     private var menuItens : CSPMenuOptions!
     
-    func initializeWithUser(user: CSPFBUser) {
-        self.user = user
-    }
+//    func initializeWithUser(user: CSPFBUser) {
+//        self.user = user
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tvMenu.dataSource = self
         tvMenu.delegate = self
+        
+        self.user = CSPCurrentUser.sharedInstance.user!
         
         configureVC()
     }
@@ -42,8 +45,10 @@ class CSPHomeViewController: UIViewController, UITableViewDelegate, UITableViewD
     func configureVC() {
         
         if user.cover != nil {
-            
-            self.view.backgroundColor = UIColor(patternImage: cropImage(screenshot: user.cover!.imgCover!))
+
+            addBlurEffect(in: self.imgCoverBackGround, withBounds: self.view.bounds)
+            self.imgCoverBackGround.image = user.cover?.imgCover
+            self.imgCoverBackGround.contentMode = .scaleAspectFill
         }
         
         
@@ -64,6 +69,12 @@ class CSPHomeViewController: UIViewController, UITableViewDelegate, UITableViewD
         tvMenu.backgroundColor = UIColor.clear
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationItem.setHidesBackButton(true, animated: false)
+        self.navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: nil, style: .plain, target: nil, action: nil)
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -78,6 +89,7 @@ class CSPHomeViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         cell.backgroundColor = UIColor.clear
         cell.textLabel?.text = menuItens.listMenu[indexPath.row].optionTitle
+        cell.textLabel?.textColor = UIColor.white
         
         return cell
     }
@@ -90,18 +102,31 @@ class CSPHomeViewController: UIViewController, UITableViewDelegate, UITableViewD
         
     }
     
-    func cropImage(screenshot: UIImage) -> UIImage {
-        let scale = screenshot.scale
-        let imgSize = screenshot.size
-        let screenHeight = UIScreen.main.bounds.height
-        let bound = self.view.bounds.height
-        let navHeight = self.navigationController!.navigationBar.frame.height
-        let bottomBarHeight = screenHeight - navHeight - bound
-        let crop = CGRect(x: 0, y: 0, width: (imgSize.width - 1) * scale, height: (imgSize.height - bottomBarHeight - 1) * scale)
-        let cgImage = screenshot.cgImage!.cropping(to: crop)
-        let image: UIImage = UIImage(cgImage: cgImage!)
-        return image
+    func addBlurEffect(in view: UIView , withBounds: CGRect) {
+        // Add blur view
+        let bounds = withBounds
+        let visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: UIBlurEffectStyle.light))
+        visualEffectView.alpha = 0.85
+        visualEffectView.frame = bounds
+        visualEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+
+        view.addSubview(visualEffectView)
     }
+    
+    
+    @IBAction func settingBtToggle(_ sender: Any) {
+        
+        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+       actionSheet.addAction(UIAlertAction.init(title: "Logout", style: .destructive, handler: { (actLogout) in
+        
+            CSPFBLoginManager.logout(navController: self.navigationController!)
+       }))
+    
+        self.present(actionSheet, animated: true, completion: nil)
+    }
+    
+    
     /*
     // MARK: - Navigation
 

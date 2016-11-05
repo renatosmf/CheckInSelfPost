@@ -19,6 +19,7 @@ class CSPLoginViewController: UIViewController, FBSDKLoginButtonDelegate {
 
         // Do any additional setup after loading the view.
         drawFBbutton()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,6 +30,27 @@ class CSPLoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
       
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        if let _ = CSPFBLoginManager.getFBCurrentToken() {
+            CSPLoading.showLoading()
+            
+            if CSPCurrentUser.sharedInstance.user == nil {
+                
+                CSPFBLoginManager.returnUserData(callback: { (result) in
+                     CSPLoading.hideLoading()
+                    if result != nil {
+                        self.goToHomeScreen(userData: CSPCurrentUser.sharedInstance.user!)
+                    }
+                })
+            }else{
+                 CSPLoading.hideLoading()
+            }
+        }
+        
     }
     
     private func drawFBbutton () {
@@ -68,24 +90,15 @@ class CSPLoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         }else{
             
             NSLog("Logged")
+            CSPLoading.showLoading()
             
             CSPFBLoginManager.returnUserData(callback: { (result) in
                 
-                if result != nil {
+                CSPLoading.hideLoading()
+                
+                if result != nil && CSPCurrentUser.sharedInstance.user != nil {
                     
-                    CSPFBLoginManager.checkPublishPermissions(vc: self)
-                    
-                    let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-                    
-                    let nextViewController = storyBoard.instantiateViewController(withIdentifier: "homeVCIdentifier") as? CSPHomeViewController
-                    
-                    nextViewController?.initializeWithUser(user: result!)
-                    
-                    let navController = UINavigationController(rootViewController: nextViewController!)
-
-                    
-                    self.present(navController, animated:true, completion:nil)
-                    
+                    self.goToHomeScreen(userData: CSPCurrentUser.sharedInstance.user!)
                     
                 }else{
                     
@@ -118,6 +131,23 @@ class CSPLoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         return true
     }
 
+    
+    func goToHomeScreen(userData: CSPFBUser) {
+        
+        CSPFBLoginManager.checkPublishPermissions(vc: self)
+        
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "homeVCIdentifier") as? CSPHomeViewController
+        
+//        nextViewController?.initializeWithUser(user: userData)
+        
+       // let navController = UINavigationController(rootViewController: nextViewController!)
+        
+        self.navigationController?.pushViewController(nextViewController!, animated: true)
+        
+//        self.present(navController, animated:true, completion:nil)
+    }
 
     /*
     // MARK: - Navigation

@@ -18,6 +18,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        //UINavigationBar.appearance().addSubview(addBlurEffect())
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+        
+        UINavigationBar.appearance().shadowImage = UIImage()
+        
+        UINavigationBar.appearance().backgroundColor = UIColor.clear
+        
+        UINavigationBar.appearance().isTranslucent = true
         
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
 
@@ -68,7 +76,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let loginManager: FBSDKLoginManager = FBSDKLoginManager()
         loginManager.logOut()
     }
-
-
 }
 
