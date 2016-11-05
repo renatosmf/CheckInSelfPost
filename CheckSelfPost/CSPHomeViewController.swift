@@ -21,9 +21,6 @@ class CSPHomeViewController: UIViewController, UITableViewDelegate, UITableViewD
     private var user : CSPFBUser!
     private var menuItens : CSPMenuOptions!
     
-//    func initializeWithUser(user: CSPFBUser) {
-//        self.user = user
-//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,6 +64,7 @@ class CSPHomeViewController: UIViewController, UITableViewDelegate, UITableViewD
         menuItens = CSPMenuOptions.contructMenu()
         
         tvMenu.backgroundColor = UIColor.clear
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -91,7 +89,20 @@ class CSPHomeViewController: UIViewController, UITableViewDelegate, UITableViewD
         cell.textLabel?.text = menuItens.listMenu[indexPath.row].optionTitle
         cell.textLabel?.textColor = UIColor.white
         
+        switch indexPath.row {
+        case 0:
+            cell.imageView?.image = UIImage(named: "ic_menu_checkin")
+        case 1:
+            cell.imageView?.image = UIImage(named: "ic_menu_camera")
+        default:
+            break
+        }
+        
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60.0
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
@@ -99,7 +110,8 @@ class CSPHomeViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        tableView.deselectRow(at: indexPath, animated: true)
+
     }
     
     func addBlurEffect(in view: UIView , withBounds: CGRect) {

@@ -142,13 +142,8 @@ class CSPLoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "homeVCIdentifier") as? CSPHomeViewController
         
-//        nextViewController?.initializeWithUser(user: userData)
-        
-       // let navController = UINavigationController(rootViewController: nextViewController!)
-        
         self.navigationController?.pushViewController(nextViewController!, animated: true)
         
-//        self.present(navController, animated:true, completion:nil)
     }
 
     /*
