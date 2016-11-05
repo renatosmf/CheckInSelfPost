@@ -38,7 +38,7 @@ class CSPLoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         if let _ = CSPFBLoginManager.getFBCurrentToken() {
             CSPLoading.showLoading()
             
-            if CSPCurrentUser.sharedInstance.user == nil {
+            if CSPCurrentUser.sharedInstance.user?.id == nil {
                 
                 CSPFBLoginManager.returnUserData(callback: { (result) in
                      CSPLoading.hideLoading()
@@ -48,6 +48,8 @@ class CSPLoginViewController: UIViewController, FBSDKLoginButtonDelegate {
                 })
             }else{
                  CSPLoading.hideLoading()
+                    self.goToHomeScreen(userData: CSPCurrentUser.sharedInstance.user!)
+
             }
         }
         

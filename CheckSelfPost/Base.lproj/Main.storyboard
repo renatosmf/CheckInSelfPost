@@ -71,7 +71,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="qke-7X-tTZ">
-                        <barButtonItem key="rightBarButtonItem" systemItem="reply" id="eke-Nc-W2t">
+                        <barButtonItem key="rightBarButtonItem" image="settings" style="plain" id="eke-Nc-W2t">
                             <connections>
                                 <action selector="settingBtToggle:" destination="oUZ-gb-6xq" id="9of-Db-VWF"/>
                             </connections>
@@ -91,7 +91,6 @@
         <!--Navigation Controller-->
         <scene sceneID="trx-qQ-w7z">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7yw-Eo-Jnb" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="homeNavControlllerId" automaticallyAdjustsScrollViewInsets="NO" id="0gF-Qw-Kac" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="nOb-rI-8z8">
@@ -103,6 +102,7 @@
                         <segue destination="oUZ-gb-6xq" kind="relationship" relationship="rootViewController" id="4az-1V-1UJ"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7yw-Eo-Jnb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1031" y="296"/>
         </scene>
@@ -127,6 +127,7 @@
     </scenes>
     <resources>
         <image name="jhoEamanda" width="414" height="736"/>
+        <image name="settings" width="25" height="25"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

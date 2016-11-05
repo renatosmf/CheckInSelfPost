@@ -117,7 +117,9 @@ class CSPHomeViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBAction func settingBtToggle(_ sender: Any) {
         
         let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        
+    
+        actionSheet.addAction(UIAlertAction.init(title: "cancelar", style: .cancel, handler: { (_) in }))
+
        actionSheet.addAction(UIAlertAction.init(title: "Logout", style: .destructive, handler: { (actLogout) in
         
             CSPFBLoginManager.logout(navController: self.navigationController!)
