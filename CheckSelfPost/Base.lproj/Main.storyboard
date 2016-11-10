@@ -71,7 +71,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="qke-7X-tTZ">
-                        <barButtonItem key="rightBarButtonItem" image="settings" style="plain" id="eke-Nc-W2t">
+                        <barButtonItem key="rightBarButtonItem" image="settings" id="eke-Nc-W2t">
                             <connections>
                                 <action selector="settingBtToggle:" destination="oUZ-gb-6xq" id="9of-Db-VWF"/>
                             </connections>
