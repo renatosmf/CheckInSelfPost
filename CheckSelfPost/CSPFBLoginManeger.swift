@@ -50,8 +50,8 @@ class CSPFBLoginManager: AnyObject {
                 let fbUser = CSPFBUser.parseObj(json:(result! as? [String:AnyObject])!)
                 print("FB USER INFO: \(fbUser)")
                 
-                CSPCurrentUser.sharedInstance.user = fbUser
-                
+                CSPCurrentUser.initInstance(user: fbUser)
+
                 callback(fbUser)
                 //etc...
             }

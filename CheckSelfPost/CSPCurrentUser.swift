@@ -20,15 +20,23 @@ class CSPCurrentUser {
     //MARK: Local Variable
     
     var user : CSPFBUser?
+    var token : CSPFBTokenSession?
     
     //MARK: Init
     
     init( user : CSPFBUser) {
         self.user = user
+        self.token = CSPFBTokenSession.init()
+    }
+    
+    static func initInstance(user: CSPFBUser) {
+        CSPCurrentUser.sharedInstance.user = user
+        CSPCurrentUser.sharedInstance.token = CSPFBTokenSession.init()
     }
     
     func cleanUser() {
         user = nil
+        token = nil
     }
     
 }
