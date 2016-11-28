@@ -29,7 +29,7 @@ class CSPCurrentUser {
         self.token = CSPFBTokenSession.init()
     }
     
-    static func initInstance(user: CSPFBUser) {
+    static func initInstanceWithUser(user: CSPFBUser) {
         CSPCurrentUser.sharedInstance.user = user
         CSPCurrentUser.sharedInstance.token = CSPFBTokenSession.init()
     }

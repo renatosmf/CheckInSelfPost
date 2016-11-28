@@ -136,7 +136,7 @@ class CSPLoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     func goToHomeScreen(userData: CSPFBUser) {
         
-        CSPFBLoginManager.checkPublishPermissions(vc: self)
+        //CSPFBLoginManager.checkPublishPermissions(vc: self)
         
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         
