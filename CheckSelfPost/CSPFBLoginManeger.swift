@@ -50,7 +50,7 @@ class CSPFBLoginManager: AnyObject {
                 let fbUser = CSPFBUser.parseObj(json:(result! as? [String:AnyObject])!)
                 print("FB USER INFO: \(fbUser)")
                 
-                CSPCurrentUser.initInstance(user: fbUser)
+                CSPCurrentUser.initInstanceWithUser(user: fbUser)
 
                 callback(fbUser)
                 //etc...
@@ -76,9 +76,9 @@ class CSPFBLoginManager: AnyObject {
                 NSLog("ERROR REQ. PUBLISH PERMITIONS: \(error)")
             }else{
                 
-                if result!.declinedPermissions.contains(PUBLISH_ACTIONS) {
-                    
-                }
+//                if (result?.declinedPermissions.contains(PUBLISH_ACTIONS)) != nil {
+//                    
+//                }
             }
             
            })
