@@ -112,11 +112,26 @@ class CSPHomeViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        switch tableView.cellForRow(at: indexPath)?.textLabel?.text {
-        case <#pattern#>:
-            <#code#>
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        var nextViewController :  UIViewController?
+        
+        switch indexPath.row {
+        case 0:
+            
+            // Checkin de convidados
+            nextViewController = storyBoard.instantiateViewController(withIdentifier: menuItens.listMenu[indexPath.row].navigateToScreenName) as? CSPQRCodeReaderViewController
+            
+        case 1:
+            break
+            // Selfie com os noivos
+           // nextViewController = storyBoard.instantiateViewController(withIdentifier: menuItens.listMenu[indexPath.row].navigateToScreenName) as? CSPQRCodeReaderViewController
+            
         default:
-            <#code#>
+            break
+        }
+        
+        if nextViewController != nil {
+            self.navigationController?.pushViewController(nextViewController!, animated: true)
         }
 
     }

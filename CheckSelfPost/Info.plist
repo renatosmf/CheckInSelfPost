@@ -79,6 +79,8 @@
 	</array>
 	<key>LSApplicationCategoryType</key>
 	<string></string>
+	<key>NSCameraUsageDescription</key>
+	<string>YES</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 </dict>

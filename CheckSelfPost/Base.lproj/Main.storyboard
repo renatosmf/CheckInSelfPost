@@ -126,7 +126,7 @@
         <!--Code Reader View Controller-->
         <scene sceneID="vR7-2o-HiL">
             <objects>
-                <viewController id="wuj-IH-3k2" customClass="CSPQRCodeReaderViewController" customModule="CSP" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CSPCheckIn" id="wuj-IH-3k2" customClass="CSPQRCodeReaderViewController" customModule="CSP" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Yjs-MO-Bo8"/>
                         <viewControllerLayoutGuide type="bottom" id="vlL-gD-2hN"/>
