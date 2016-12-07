@@ -70,7 +70,7 @@ class CSPHomeViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationItem.setHidesBackButton(true, animated: false)
-        self.navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: nil, style: .plain, target: nil, action: nil)
+        self.navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: nil, style: .done, target: nil, action: nil)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -111,6 +111,13 @@ class CSPHomeViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        switch tableView.cellForRow(at: indexPath)?.textLabel?.text {
+        case <#pattern#>:
+            <#code#>
+        default:
+            <#code#>
+        }
 
     }
     
