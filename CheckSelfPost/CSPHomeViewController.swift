@@ -71,6 +71,7 @@ class CSPHomeViewController: UIViewController, UITableViewDelegate, UITableViewD
         super.viewWillAppear(animated)
         self.navigationItem.setHidesBackButton(true, animated: false)
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: nil, style: .done, target: nil, action: nil)
+        
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

@@ -24,7 +24,6 @@ class CSPQRCodeReaderViewController: UIViewController, AVCaptureMetadataOutputOb
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.navigationController?.navigationBar.topItem?.backBarButtonItem?.title = "";
 
         // Get an instance of the AVCaptureDevice class to initialize a device object and provide the video
         // as the media type parameter.
@@ -84,6 +83,13 @@ class CSPQRCodeReaderViewController: UIViewController, AVCaptureMetadataOutputOb
         // Dispose of any resources that can be recreated.
     }
     
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationController?.navigationBar.backItem?.title = " "
+
+    }
 
     
     

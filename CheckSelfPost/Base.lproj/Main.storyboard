@@ -105,6 +105,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="qke-7X-tTZ">
+                        <barButtonItem key="backBarButtonItem" title=" " id="LQr-ht-9rX"/>
                         <barButtonItem key="rightBarButtonItem" image="settings" id="eke-Nc-W2t">
                             <connections>
                                 <action selector="settingBtToggle:" destination="oUZ-gb-6xq" id="9of-Db-VWF"/>
