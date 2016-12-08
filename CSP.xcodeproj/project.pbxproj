@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		08249C4A1DF6EF6F00E563AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08249C491DF6EF6F00E563AB /* AppDelegate.swift */; };
 		087286A41DB66F5C00FB76CA /* CSPFBLoginManeger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087286A31DB66F5C00FB76CA /* CSPFBLoginManeger.swift */; };
 		731B100F1DB1DDE5008AB810 /* CSPLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731B100E1DB1DDE5008AB810 /* CSPLoginViewController.swift */; };
 		737E4FB51DE2993000129A8E /* CSPFBTokenSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737E4FB41DE2993000129A8E /* CSPFBTokenSession.swift */; };
@@ -18,7 +19,6 @@
 		73D364FB1DCE4F270083826F /* CSPLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D364FA1DCE4F270083826F /* CSPLoading.swift */; };
 		73D364FE1DCE4FAE0083826F /* CSPLoading.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73D364FD1DCE4FAE0083826F /* CSPLoading.xib */; };
 		73D365001DCE695D0083826F /* CSPCurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D364FF1DCE695D0083826F /* CSPCurrentUser.swift */; };
-		73FE03531DA1FAC0003C321E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FE03521DA1FAC0003C321E /* AppDelegate.swift */; };
 		73FE03581DA1FAC0003C321E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73FE03561DA1FAC0003C321E /* Main.storyboard */; };
 		73FE035A1DA1FAC0003C321E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73FE03591DA1FAC0003C321E /* Assets.xcassets */; };
 		73FE035D1DA1FAC0003C321E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73FE035B1DA1FAC0003C321E /* LaunchScreen.storyboard */; };
@@ -43,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		08249C491DF6EF6F00E563AB /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		087286A11DB65D3200FB76CA /* CSP.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CSP.entitlements; sourceTree = "<group>"; };
 		087286A31DB66F5C00FB76CA /* CSPFBLoginManeger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSPFBLoginManeger.swift; sourceTree = "<group>"; };
 		1454B883E65413990343439A /* Pods-CSP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CSP.release.xcconfig"; path = "Pods/Target Support Files/Pods-CSP/Pods-CSP.release.xcconfig"; sourceTree = "<group>"; };
@@ -58,11 +59,10 @@
 		73D364FD1DCE4FAE0083826F /* CSPLoading.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CSPLoading.xib; sourceTree = "<group>"; };
 		73D364FF1DCE695D0083826F /* CSPCurrentUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSPCurrentUser.swift; sourceTree = "<group>"; };
 		73FE034F1DA1FAC0003C321E /* CSP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CSP.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		73FE03521DA1FAC0003C321E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AppDelegate.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		73FE03571DA1FAC0003C321E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		73FE03591DA1FAC0003C321E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		73FE03591DA1FAC0003C321E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../CSP/Assets.xcassets; sourceTree = "<group>"; };
 		73FE035C1DA1FAC0003C321E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		73FE035E1DA1FAC0003C321E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		73FE035E1DA1FAC0003C321E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../CSP/Info.plist; sourceTree = "<group>"; };
 		73FE03631DA1FAC0003C321E /* CSPTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CSPTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		73FE036E1DA1FAC0003C321E /* CSPUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CSPUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8523586F047514DBD5DCED7 /* Pods-CSP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CSP.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CSP/Pods-CSP.debug.xcconfig"; sourceTree = "<group>"; };
@@ -164,7 +164,7 @@
 		73FE03511DA1FAC0003C321E /* CSP */ = {
 			isa = PBXGroup;
 			children = (
-				73FE03521DA1FAC0003C321E /* AppDelegate.swift */,
+				08249C491DF6EF6F00E563AB /* AppDelegate.swift */,
 				731B100B1DB1DD6F008AB810 /* Model */,
 				731B100C1DB1DD75008AB810 /* ViewControllers */,
 				731B100D1DB1DD82008AB810 /* Services */,
@@ -175,8 +175,7 @@
 				73FE035B1DA1FAC0003C321E /* LaunchScreen.storyboard */,
 				73FE035E1DA1FAC0003C321E /* Info.plist */,
 			);
-			name = CSP;
-			path = CheckSelfPost;
+			path = CSP;
 			sourceTree = "<group>";
 		};
 		A2A7574E52870E1BE1ED6D6B /* Pods */ = {
@@ -441,8 +440,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08249C4A1DF6EF6F00E563AB /* AppDelegate.swift in Sources */,
 				73C03B211DCA2BA7000B1C3B /* CSPHomeViewController.swift in Sources */,
-				73FE03531DA1FAC0003C321E /* AppDelegate.swift in Sources */,
 				73D364FB1DCE4F270083826F /* CSPLoading.swift in Sources */,
 				73C03B1F1DCA17C1000B1C3B /* CSPFBPictureProfile.swift in Sources */,
 				73C03B251DCABA7F000B1C3B /* CSPFBCoverPicture.swift in Sources */,
@@ -491,6 +490,7 @@
 				73FE03571DA1FAC0003C321E /* Base */,
 			);
 			name = Main.storyboard;
+			path = ../CSP;
 			sourceTree = "<group>";
 		};
 		73FE035B1DA1FAC0003C321E /* LaunchScreen.storyboard */ = {
@@ -499,6 +499,7 @@
 				73FE035C1DA1FAC0003C321E /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = ../CSP;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -607,7 +608,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = CSP.entitlements;
 				DEVELOPMENT_TEAM = 39N9FX32MH;
-				INFOPLIST_FILE = CheckSelfPost/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/CSP/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.csp;
@@ -625,7 +626,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = CSP.entitlements;
 				DEVELOPMENT_TEAM = 39N9FX32MH;
-				INFOPLIST_FILE = CheckSelfPost/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/CSP/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.csp;
