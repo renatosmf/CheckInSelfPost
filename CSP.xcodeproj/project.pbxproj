@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		08249C4A1DF6EF6F00E563AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08249C491DF6EF6F00E563AB /* AppDelegate.swift */; };
 		087286A41DB66F5C00FB76CA /* CSPFBLoginManeger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087286A31DB66F5C00FB76CA /* CSPFBLoginManeger.swift */; };
+		08E6AC9D1DECC56D00468126 /* CSPQRCodeReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E6AC9C1DECC56D00468126 /* CSPQRCodeReaderViewController.swift */; };
 		731B100F1DB1DDE5008AB810 /* CSPLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731B100E1DB1DDE5008AB810 /* CSPLoginViewController.swift */; };
 		737E4FB51DE2993000129A8E /* CSPFBTokenSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737E4FB41DE2993000129A8E /* CSPFBTokenSession.swift */; };
 		73C03B1D1DCA1656000B1C3B /* CSPFBUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C03B1C1DCA1656000B1C3B /* CSPFBUser.swift */; };
@@ -46,6 +47,7 @@
 		08249C491DF6EF6F00E563AB /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		087286A11DB65D3200FB76CA /* CSP.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CSP.entitlements; sourceTree = "<group>"; };
 		087286A31DB66F5C00FB76CA /* CSPFBLoginManeger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSPFBLoginManeger.swift; sourceTree = "<group>"; };
+		08E6AC9C1DECC56D00468126 /* CSPQRCodeReaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSPQRCodeReaderViewController.swift; sourceTree = "<group>"; };
 		1454B883E65413990343439A /* Pods-CSP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CSP.release.xcconfig"; path = "Pods/Target Support Files/Pods-CSP/Pods-CSP.release.xcconfig"; sourceTree = "<group>"; };
 		2868DAF9BFA28945A21DCC6F /* Pods_CSP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CSP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		731B100E1DB1DDE5008AB810 /* CSPLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = CSPLoginViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -121,6 +123,7 @@
 			children = (
 				731B100E1DB1DDE5008AB810 /* CSPLoginViewController.swift */,
 				73C03B201DCA2BA7000B1C3B /* CSPHomeViewController.swift */,
+				08E6AC9C1DECC56D00468126 /* CSPQRCodeReaderViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -269,7 +272,7 @@
 				TargetAttributes = {
 					73FE034E1DA1FAC0003C321E = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 39N9FX32MH;
+						DevelopmentTeam = W2JS3YXSKF;
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -448,6 +451,7 @@
 				73D365001DCE695D0083826F /* CSPCurrentUser.swift in Sources */,
 				73C03B231DCA324C000B1C3B /* CSPMenuOptions.swift in Sources */,
 				731B100F1DB1DDE5008AB810 /* CSPLoginViewController.swift in Sources */,
+				08E6AC9D1DECC56D00468126 /* CSPQRCodeReaderViewController.swift in Sources */,
 				087286A41DB66F5C00FB76CA /* CSPFBLoginManeger.swift in Sources */,
 				73C03B1D1DCA1656000B1C3B /* CSPFBUser.swift in Sources */,
 				737E4FB51DE2993000129A8E /* CSPFBTokenSession.swift in Sources */,

@@ -41,7 +41,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W6Q-Er-WMd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="961.875" y="312.67605633802816"/>
+            <point key="canvasLocation" x="1204" y="312"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="C0D-NL-YNb">
@@ -105,12 +105,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="qke-7X-tTZ">
+                        <barButtonItem key="backBarButtonItem" title=" " id="LQr-ht-9rX"/>
                         <barButtonItem key="rightBarButtonItem" image="settings" id="eke-Nc-W2t">
                             <connections>
                                 <action selector="settingBtToggle:" destination="oUZ-gb-6xq" id="9of-Db-VWF"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="imgAvatarProfile" destination="a0y-W0-h3s" id="ink-L2-V0w"/>
                         <outlet property="imgCoverBackGround" destination="yql-ZP-wQk" id="QIc-B0-bcL"/>
@@ -120,12 +122,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2TI-nj-kYA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1887" y="312"/>
+            <point key="canvasLocation" x="1204" y="992"/>
         </scene>
-        <!--View Controller-->
+        <!--Code Reader View Controller-->
         <scene sceneID="vR7-2o-HiL">
             <objects>
-                <viewController id="wuj-IH-3k2" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CSPCheckIn" id="wuj-IH-3k2" customClass="CSPQRCodeReaderViewController" customModule="CSP" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Yjs-MO-Bo8"/>
                         <viewControllerLayoutGuide type="bottom" id="vlL-gD-2hN"/>
@@ -139,25 +141,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2GQ-8u-6gR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3901.875" y="5.28169014084507"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="trx-qQ-w7z">
-            <objects>
-                <navigationController storyboardIdentifier="homeNavControlllerId" automaticallyAdjustsScrollViewInsets="NO" id="0gF-Qw-Kac" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nOb-rI-8z8">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="oUZ-gb-6xq" kind="relationship" relationship="rootViewController" id="4az-1V-1UJ"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7yw-Eo-Jnb" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1491" y="312"/>
+            <point key="canvasLocation" x="1204" y="1696"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="o9F-hf-0j1">

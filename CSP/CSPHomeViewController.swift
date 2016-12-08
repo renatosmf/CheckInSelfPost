@@ -70,7 +70,8 @@ class CSPHomeViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationItem.setHidesBackButton(true, animated: false)
-        self.navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: nil, style: .plain, target: nil, action: nil)
+        self.navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: nil, style: .done, target: nil, action: nil)
+        
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -111,6 +112,28 @@ class CSPHomeViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        var nextViewController :  UIViewController?
+        
+        switch indexPath.row {
+        case 0:
+            
+            // Checkin de convidados
+            nextViewController = storyBoard.instantiateViewController(withIdentifier: menuItens.listMenu[indexPath.row].navigateToScreenName) as? CSPQRCodeReaderViewController
+            
+        case 1:
+            break
+            // Selfie com os noivos
+           // nextViewController = storyBoard.instantiateViewController(withIdentifier: menuItens.listMenu[indexPath.row].navigateToScreenName) as? CSPQRCodeReaderViewController
+            
+        default:
+            break
+        }
+        
+        if nextViewController != nil {
+            self.navigationController?.pushViewController(nextViewController!, animated: true)
+        }
 
     }
     
