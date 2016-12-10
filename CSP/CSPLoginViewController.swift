@@ -25,11 +25,20 @@ class CSPLoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         if userIsSaved {
             CSPLoading.showLoading()
             
-            CSPFBLoginManager.login(callback: { (success) in
+            CSPFBLoginManager.login(callback: { (success, erroMsg) in
                 CSPLoading.hideLoading()
                 
                 if success! {
+                    
                     self.goToHomeScreen()
+
+                    if erroMsg !=  nil {
+                        CSPAlertHelper.alertWithTile(title: "Atenção", message: erroMsg!, buttons: [("Ok", nil)], viewController: self)
+                    }
+                    
+                }else{
+                    
+                     CSPAlertHelper.alertWithTile(title: "Atenção", message: erroMsg!, buttons: [("Ok", nil)], viewController: self)
                 }
             })
         }
@@ -89,25 +98,21 @@ class CSPLoginViewController: UIViewController, FBSDKLoginButtonDelegate {
             NSLog("Logged")
             CSPLoading.showLoading()
             
-            CSPFBLoginManager.login(callback: { (isSuccess) in
+            CSPFBLoginManager.login(callback: { (success, erroMsg) in
                 
                 CSPLoading.hideLoading()
                 
-                if isSuccess! {
+                if success! {
                     
                     self.goToHomeScreen()
+
+                    if erroMsg !=  nil {
+                        CSPAlertHelper.alertWithTile(title: "Atenção", message: erroMsg!, buttons: [("Ok", nil)], viewController: self)
+                    }
                     
                 }else{
                     
-                    let alert = UIAlertController.init(title: "Error", message: "Falha ao logar com Facebook.", preferredStyle: .alert)
-                    
-                    alert.addAction(UIAlertAction.init(title: "Ok!", style: .cancel, handler: { (_) in
-                        NSLog("ok")
-                        
-                    }))
-                    
-                    self.present(alert, animated: true, completion: nil)
-
+                    CSPAlertHelper.alertWithTile(title: "Atenção", message: erroMsg!, buttons: [("Ok", nil)], viewController: self)
                 }
                 
             })
@@ -134,6 +139,10 @@ class CSPLoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "homeVCIdentifier") as? CSPHomeViewController
+        
+        nextViewController?.navigationItem.setHidesBackButton(true, animated: false)
+        
+        nextViewController?.navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: nil, style: .done, target: nil, action: nil)
         
         self.navigationController?.pushViewController(nextViewController!, animated: true)
         

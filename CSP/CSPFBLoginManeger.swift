@@ -64,13 +64,16 @@ class CSPFBLoginManager: AnyObject {
     }
     
     
-    class func login(callback: @escaping (Bool?) -> Void) {
+    class func login(callback: @escaping (_ success: Bool?, _ messageError: String?) -> Void) {
         
-        if let userData = loadUserData().userData {
-           let _ = FBSDKAccessToken.setCurrent(userData.tokenSession?.token)
-            
+        let userData : CSPFBUser? = loadUserData().userData
+        
+        if userData != nil {
+            let _ = FBSDKAccessToken.setCurrent(userData!.tokenSession?.token)
         }
         
+        if CSPConetionHelper.isConnectedToNetwork() {
+            
             let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields":"id,interested_in,gender,birthday,email,age_range,name,picture.width(480).height(480),cover"])
             
             graphRequest.start(completionHandler: { (connection, result, error) -> Void in
@@ -80,7 +83,7 @@ class CSPFBLoginManager: AnyObject {
                     // Process error
                     print("\n\nError: \(error)")
                     logout()
-                    callback(false)
+                    callback(false, "Falha ao tentar logar no Facebook")
                     return
                 }
                 else
@@ -96,12 +99,20 @@ class CSPFBLoginManager: AnyObject {
                     CSPCurrentUser.initInstanceWithUser(user: fbUser)
                     let successSaveUserData = retrievedUserData()
                     
-                    callback(successSaveUserData)
+                    callback(successSaveUserData, nil)
                     return
                     //etc...
                 }
             })
-        
+            
+        }else{
+            
+            if userData != nil {
+                callback(true, "Verifique sua conexão com a Internet")
+            }else{
+                callback(false, "Falha ao logar, verifique sua conexão com a Internet")
+            }
+        }
     }
     
     static private func retrievedUserData() -> Bool{

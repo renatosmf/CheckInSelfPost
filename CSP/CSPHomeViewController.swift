@@ -46,8 +46,8 @@ class CSPHomeViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
         
         
-        if user.picture?.dataInfo != nil {
-            imgAvatarProfile.image = user.picture?.dataInfo?.imgProfile
+        if user.picture != nil {
+            imgAvatarProfile.image = user.picture?.imgProfile
             
             imgAvatarProfile.layer.masksToBounds = true
             imgAvatarProfile.layer.borderWidth = 1.5
@@ -66,8 +66,6 @@ class CSPHomeViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationItem.setHidesBackButton(true, animated: false)
-        self.navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: nil, style: .done, target: nil, action: nil)
         
         self.user = CSPCurrentUser.sharedInstance.user!
         
