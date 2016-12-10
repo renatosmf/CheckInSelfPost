@@ -79,15 +79,7 @@ class CSPLoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         if error != nil {
             NSLog("Error at try make Login")
             
-            let alert = UIAlertController.init(title: "Error", message: "Falha ao realizar login no Facebook.", preferredStyle: .alert)
-            
-            alert.addAction(UIAlertAction.init(title: "Ok!", style: .cancel, handler: { (_) in
-                NSLog("ok")
-                
-            }))
-            
-            self.present(alert, animated: true, completion: nil)
-            
+            CSPAlertHelper.alertWithTile(title: "Error", message: "Falha ao realizar login no Facebook.", buttons: [("Ok", nil)], viewController: self)
             
         }else if result.isCancelled {
             NSLog("Login Cancelled")
