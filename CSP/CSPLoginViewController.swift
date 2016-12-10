@@ -20,6 +20,19 @@ class CSPLoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         // Do any additional setup after loading the view.
         drawFBbutton()
         
+        let userIsSaved = CSPFBLoginManager.containUserSaved()
+        
+        if userIsSaved {
+            CSPLoading.showLoading()
+            
+            CSPFBLoginManager.login(callback: { (success) in
+                CSPLoading.hideLoading()
+                
+                if success! {
+                    self.goToHomeScreen()
+                }
+            })
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,24 +48,6 @@ class CSPLoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        if let _ = CSPFBLoginManager.getFBCurrentToken() {
-            CSPLoading.showLoading()
-            
-            if CSPCurrentUser.sharedInstance.user?.id == nil {
-                
-                CSPFBLoginManager.returnUserData(callback: { (result) in
-                     CSPLoading.hideLoading()
-                    if result != nil {
-                        self.goToHomeScreen(userData: CSPCurrentUser.sharedInstance.user!)
-                    }
-                })
-            }else{
-                 CSPLoading.hideLoading()
-                    self.goToHomeScreen(userData: CSPCurrentUser.sharedInstance.user!)
-
-            }
-        }
-        
     }
     
     private func drawFBbutton () {
@@ -94,17 +89,17 @@ class CSPLoginViewController: UIViewController, FBSDKLoginButtonDelegate {
             NSLog("Logged")
             CSPLoading.showLoading()
             
-            CSPFBLoginManager.returnUserData(callback: { (result) in
+            CSPFBLoginManager.login(callback: { (isSuccess) in
                 
                 CSPLoading.hideLoading()
                 
-                if result != nil && CSPCurrentUser.sharedInstance.user != nil {
+                if isSuccess! {
                     
-                    self.goToHomeScreen(userData: CSPCurrentUser.sharedInstance.user!)
+                    self.goToHomeScreen()
                     
                 }else{
                     
-                    let alert = UIAlertController.init(title: "Error", message: "Falha ao acessar os dados do Usuario no Facebook.", preferredStyle: .alert)
+                    let alert = UIAlertController.init(title: "Error", message: "Falha ao logar com Facebook.", preferredStyle: .alert)
                     
                     alert.addAction(UIAlertAction.init(title: "Ok!", style: .cancel, handler: { (_) in
                         NSLog("ok")
@@ -122,7 +117,7 @@ class CSPLoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
         NSLog("Logout")
-    
+        CSPFBLoginManager.logout(vc: self)
     
     }
    
@@ -134,9 +129,7 @@ class CSPLoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     }
 
     
-    func goToHomeScreen(userData: CSPFBUser) {
-        
-        //CSPFBLoginManager.checkPublishPermissions(vc: self)
+    func goToHomeScreen() {
         
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         

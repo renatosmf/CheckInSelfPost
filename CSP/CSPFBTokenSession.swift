@@ -9,18 +9,24 @@
 import UIKit
 import FBSDKLoginKit
 
-class CSPFBTokenSession: NSObject {
+class CSPFBTokenSession: NSObject, NSCoding {
 
-    var tokenString : String?
-    var userID : String?
-    var expirationDate : Date?
-    var refreshDate : Date?
+    var token : FBSDKAccessToken?
     
     override init() {
-        self.tokenString = FBSDKAccessToken.current().tokenString
-        self.userID = FBSDKAccessToken.current().appID
-        self.expirationDate = FBSDKAccessToken.current().expirationDate
-        self.refreshDate = FBSDKAccessToken.current().refreshDate
-        
+        self.token = FBSDKAccessToken.current()
     }
+    
+    
+    public func encode(with aCoder: NSCoder) {
+        aCoder.encode(token, forKey: "token")
+
+    }
+    
+    
+    required init(coder aDecoder: NSCoder) {
+        
+        token = aDecoder.decodeObject(forKey: "token") as? FBSDKAccessToken
+    }
+
 }

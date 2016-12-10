@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class CSPFBCoverPicture: NSObject {
+class CSPFBCoverPicture: NSObject, NSCoding {
     
     var id : Int?
     var offset_x : Int?
@@ -17,7 +17,7 @@ class CSPFBCoverPicture: NSObject {
     var url : String?
     var imgCover : UIImage?
     
-    func makeFromDictionaryToObject(jsonDic: Dictionary<String,AnyObject>) -> CSPFBCoverPicture {
+    init(jsonDic: Dictionary<String,AnyObject>){
     
         if let a = jsonDic["id"] as? String {
             self.id = Int(a)
@@ -42,7 +42,27 @@ class CSPFBCoverPicture: NSObject {
                 NSLog("Error Dowload cover img: \(error)")
             }
         }
-        
-        return self
     }
+    
+    
+    public func encode(with aCoder: NSCoder) {
+        aCoder.encode(id, forKey: "id")
+        aCoder.encode(offset_x, forKey: "offset_x")
+        aCoder.encode(offset_y, forKey: "offset_y")
+        aCoder.encode(url, forKey: "url")
+        aCoder.encode(UIImagePNGRepresentation(imgCover!), forKey: "imgCover")
+
+    }
+    
+    
+    required init(coder aDecoder: NSCoder) {
+        
+        id = aDecoder.decodeObject(forKey: "id") as? Int
+        offset_x = aDecoder.decodeObject(forKey:"offset_x") as? Int
+        offset_y = aDecoder.decodeObject(forKey:"offset_y") as? Int
+        url = aDecoder.decodeObject(forKey:"url") as? String
+        imgCover = UIImage.init(data: aDecoder.decodeObject(forKey:"imgCover") as! Data)
+    }
+    
+    
 }

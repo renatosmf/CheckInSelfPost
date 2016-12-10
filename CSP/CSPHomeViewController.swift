@@ -28,9 +28,6 @@ class CSPHomeViewController: UIViewController, UITableViewDelegate, UITableViewD
         tvMenu.dataSource = self
         tvMenu.delegate = self
         
-        self.user = CSPCurrentUser.sharedInstance.user!
-        
-        configureVC()
     }
 
     override func didReceiveMemoryWarning() {
@@ -72,6 +69,9 @@ class CSPHomeViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.navigationItem.setHidesBackButton(true, animated: false)
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: nil, style: .done, target: nil, action: nil)
         
+        self.user = CSPCurrentUser.sharedInstance.user!
+        
+        configureVC()
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -157,7 +157,8 @@ class CSPHomeViewController: UIViewController, UITableViewDelegate, UITableViewD
 
        actionSheet.addAction(UIAlertAction.init(title: "Logout", style: .destructive, handler: { (actLogout) in
         
-            CSPFBLoginManager.logout(navController: self.navigationController!)
+            CSPFBLoginManager.logout(vc: self)
+
        }))
     
         self.present(actionSheet, animated: true, completion: nil)

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class CSPFBPictureProfile : NSObject {
+class CSPFBPictureProfile : NSObject, NSCoding {
     
     struct DataInfo {
         var height : Int?
@@ -24,34 +24,50 @@ class CSPFBPictureProfile : NSObject {
         self.dataInfo = DataInfo()
     }
     
-    static func makeFromDictionaryToObject(jsonDic: Dictionary<String,AnyObject>) -> CSPFBPictureProfile {
+    convenience init(jsonDic: Dictionary<String,AnyObject>){
         
-        let picture = CSPFBPictureProfile()
+        self.init()
         
-        if let a = (jsonDic["data"] as! Dictionary<String,AnyObject>)["height"] {
+        if let a = (jsonDic["data"] as? Dictionary<String,AnyObject>)?["height"] {
             
-            picture.dataInfo?.height = a as? Int
+            self.dataInfo?.height = a as? Int
         }
         
-        if let b = (jsonDic["data"] as! Dictionary<String,AnyObject>)["width"] {
+        if let b = (jsonDic["data"] as? Dictionary<String,AnyObject>)?["width"] {
             
-            picture.dataInfo?.width = b as? Int
+            self.dataInfo?.width = b as? Int
         }
         
-        if let c = (jsonDic["data"] as! Dictionary<String,AnyObject>)["url"] {
+        if let c = (jsonDic["data"] as? Dictionary<String,AnyObject>)?["url"] {
             
-            picture.dataInfo?.url = c as? String
+            self.dataInfo?.url = c as? String
             
-            let u = URL(string: picture.dataInfo!.url!)
+            let u = URL(string: self.dataInfo!.url!)
             
             do {
                 let imgData = try Data.init(contentsOf: u!)
-                picture.dataInfo!.imgProfile = UIImage(data: imgData)
+                self.dataInfo!.imgProfile = UIImage(data: imgData)
             }catch let error {
                 NSLog("Error Dowload profile img: \(error)")
             }
         }
-        
-        return picture
     }
+    
+    
+    public func encode(with aCoder: NSCoder) {
+        aCoder.encode(dataInfo?.height, forKey: "height")
+        aCoder.encode(dataInfo?.width, forKey: "width")
+        aCoder.encode(dataInfo?.url, forKey: "url")
+        aCoder.encode(UIImagePNGRepresentation(dataInfo!.imgProfile!), forKey: "imgProfile")
+    }
+    
+    
+    required init(coder aDecoder: NSCoder) {
+        
+        dataInfo?.height = aDecoder.decodeObject(forKey: "height") as? Int
+        dataInfo?.width = aDecoder.decodeObject(forKey:"width") as? Int
+        dataInfo?.url = aDecoder.decodeObject(forKey:"url") as? String
+        dataInfo?.imgProfile = UIImage.init(data: aDecoder.decodeObject(forKey:"imgProfile") as! Data)
+    }
+
 }
