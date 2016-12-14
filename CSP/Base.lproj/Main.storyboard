@@ -178,7 +178,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ifn-i3-zCY">
-                                <rect key="frame" x="16" y="126" width="288" height="280"/>
+                                <rect key="frame" x="16" y="139" width="288" height="267"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -189,7 +189,7 @@
                         <constraints>
                             <constraint firstItem="Ifn-i3-zCY" firstAttribute="trailing" secondItem="25r-HI-deT" secondAttribute="trailingMargin" id="2op-u2-HgN"/>
                             <constraint firstItem="CU0-xp-TXn" firstAttribute="leading" secondItem="25r-HI-deT" secondAttribute="leadingMargin" id="8pe-Hh-sfN"/>
-                            <constraint firstItem="Ifn-i3-zCY" firstAttribute="top" secondItem="8n8-jZ-ofz" secondAttribute="bottom" constant="22" id="JHr-PU-VDj"/>
+                            <constraint firstItem="Ifn-i3-zCY" firstAttribute="top" secondItem="8n8-jZ-ofz" secondAttribute="bottom" constant="35" id="JHr-PU-VDj"/>
                             <constraint firstItem="Ifn-i3-zCY" firstAttribute="leading" secondItem="25r-HI-deT" secondAttribute="leadingMargin" id="Vot-mb-iDM"/>
                             <constraint firstItem="CU0-xp-TXn" firstAttribute="top" secondItem="Ifn-i3-zCY" secondAttribute="bottom" constant="29" id="Xf4-S1-EVq"/>
                             <constraint firstItem="CU0-xp-TXn" firstAttribute="trailing" secondItem="25r-HI-deT" secondAttribute="trailingMargin" id="bvY-kA-jKG"/>

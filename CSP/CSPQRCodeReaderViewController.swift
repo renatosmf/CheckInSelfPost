@@ -15,8 +15,8 @@ class CSPQRCodeReaderViewController: UIViewController, AVCaptureMetadataOutputOb
     var captureSession:AVCaptureSession?
     var videoPreviewLayer:AVCaptureVideoPreviewLayer?
     var qrCodeFrameView:UIView?
-    var codeFrameView : UIView?
     var invitedList : [CSPGuest] = []
+    var timeReader : Int = 0
     
     // Added to support different barcodes
     let supportedBarCodes = [AVMetadataObjectTypeQRCode, AVMetadataObjectTypeCode128Code, AVMetadataObjectTypeCode39Code, AVMetadataObjectTypeCode93Code, AVMetadataObjectTypeUPCECode, AVMetadataObjectTypePDF417Code, AVMetadataObjectTypeEAN13Code, AVMetadataObjectTypeAztecCode]
@@ -39,8 +39,8 @@ class CSPQRCodeReaderViewController: UIViewController, AVCaptureMetadataOutputOb
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        self.qrCodeFrameView?.removeFromSuperview()
+        timeReader = 0
+        qrCodeFrameView?.frame = .zero
         
         if captureSession != nil {
             captureSession?.startRunning()
@@ -78,9 +78,14 @@ class CSPQRCodeReaderViewController: UIViewController, AVCaptureMetadataOutputOb
             if metadataObj.stringValue != nil {
                 NSLog("QRCode text : %@", metadataObj.stringValue)
                 
-                self.goToNextScreen()
-                captureSession?.stopRunning()
-                return
+                if timeReader == 0 {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(800)) {
+                        self.captureSession?.stopRunning()
+                        self.goToNextScreen()
+                    }
+                    timeReader += 1
+                }
+
             }
         }
 
@@ -127,13 +132,11 @@ class CSPQRCodeReaderViewController: UIViewController, AVCaptureMetadataOutputOb
             // Initialize QR Code Frame to highlight the QR code
             qrCodeFrameView = UIView()
             
-            codeFrameView = qrCodeFrameView
-            
-            if codeFrameView != nil {
-                codeFrameView?.layer.borderColor = UIColor.green.cgColor
-                codeFrameView?.layer.borderWidth = 2
-                view.addSubview(codeFrameView!)
-                view.bringSubview(toFront:codeFrameView!)
+            if let qrCodeFrameView = qrCodeFrameView {
+                qrCodeFrameView.layer.borderColor = UIColor.green.cgColor
+                qrCodeFrameView.layer.borderWidth = 2
+                view.addSubview(qrCodeFrameView)
+                view.bringSubview(toFront:qrCodeFrameView)
             }
             
         } catch {
