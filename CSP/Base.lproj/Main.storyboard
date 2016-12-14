@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="22E-3j-9g6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="22E-3j-9g6">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -127,7 +127,7 @@
         <!--Code Reader View Controller-->
         <scene sceneID="vR7-2o-HiL">
             <objects>
-                <viewController storyboardIdentifier="CSPCheckIn" id="wuj-IH-3k2" customClass="CSPQRCodeReaderViewController" customModule="CSP" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="QRCodeVCIdentifier" id="wuj-IH-3k2" customClass="CSPQRCodeReaderViewController" customModule="CSP" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Yjs-MO-Bo8"/>
                         <viewControllerLayoutGuide type="bottom" id="vlL-gD-2hN"/>
@@ -142,6 +142,73 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2GQ-8u-6gR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1204" y="1696"/>
+        </scene>
+        <!--Invited Check List View Controller-->
+        <scene sceneID="sMg-kB-K4N">
+            <objects>
+                <viewController storyboardIdentifier="invitedCheckInVCIdentifier" id="vIS-K4-brZ" customClass="CSPInvitedCheckListViewController" customModule="CSP" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="htv-bV-Yxx"/>
+                        <viewControllerLayoutGuide type="bottom" id="UCK-aa-CD6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="25r-HI-deT">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CU0-xp-TXn">
+                                <rect key="frame" x="16" y="435" width="288" height="49"/>
+                                <color key="backgroundColor" red="0.0078431372550000003" green="0.60784313729999995" blue="0.7725490196" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="xmj-1t-PNU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GurmukhiMN" family="Gurmukhi MN" pointSize="18"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="continuar"/>
+                                <connections>
+                                    <action selector="btContinueTapped:" destination="vIS-K4-brZ" eventType="touchUpInside" id="SFm-Xl-Rvg"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selecione os convidados que estão presentes." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8n8-jZ-ofz">
+                                <rect key="frame" x="16" y="26" width="288" height="78"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="78" id="Y5t-Kb-sz0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GurmukhiMN" family="Gurmukhi MN" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ifn-i3-zCY">
+                                <rect key="frame" x="16" y="126" width="288" height="280"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <sections/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ifn-i3-zCY" firstAttribute="trailing" secondItem="25r-HI-deT" secondAttribute="trailingMargin" id="2op-u2-HgN"/>
+                            <constraint firstItem="CU0-xp-TXn" firstAttribute="leading" secondItem="25r-HI-deT" secondAttribute="leadingMargin" id="8pe-Hh-sfN"/>
+                            <constraint firstItem="Ifn-i3-zCY" firstAttribute="top" secondItem="8n8-jZ-ofz" secondAttribute="bottom" constant="22" id="JHr-PU-VDj"/>
+                            <constraint firstItem="Ifn-i3-zCY" firstAttribute="leading" secondItem="25r-HI-deT" secondAttribute="leadingMargin" id="Vot-mb-iDM"/>
+                            <constraint firstItem="CU0-xp-TXn" firstAttribute="top" secondItem="Ifn-i3-zCY" secondAttribute="bottom" constant="29" id="Xf4-S1-EVq"/>
+                            <constraint firstItem="CU0-xp-TXn" firstAttribute="trailing" secondItem="25r-HI-deT" secondAttribute="trailingMargin" id="bvY-kA-jKG"/>
+                            <constraint firstItem="8n8-jZ-ofz" firstAttribute="top" secondItem="htv-bV-Yxx" secondAttribute="bottom" constant="26" id="f7h-jC-dtg"/>
+                            <constraint firstItem="Ifn-i3-zCY" firstAttribute="centerX" secondItem="25r-HI-deT" secondAttribute="centerX" id="iQ5-KC-Mfi"/>
+                            <constraint firstItem="8n8-jZ-ofz" firstAttribute="trailing" secondItem="25r-HI-deT" secondAttribute="trailingMargin" id="jUI-JS-xz3"/>
+                            <constraint firstItem="UCK-aa-CD6" firstAttribute="top" secondItem="CU0-xp-TXn" secondAttribute="bottom" constant="20" id="l7y-CA-dPm"/>
+                            <constraint firstItem="8n8-jZ-ofz" firstAttribute="leading" secondItem="25r-HI-deT" secondAttribute="leadingMargin" id="uZ9-eO-fD2"/>
+                        </constraints>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="btContinue" destination="CU0-xp-TXn" id="ETc-zc-vCF"/>
+                        <outlet property="tvInvitedList" destination="Ifn-i3-zCY" id="HJw-DO-xn9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FPf-aK-THi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1200" y="2372.5352112676055"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="o9F-hf-0j1">

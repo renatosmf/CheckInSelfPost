@@ -12,6 +12,10 @@
 		0848E5D21DFC8EFF005788E1 /* CSPAlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0848E5D11DFC8EFF005788E1 /* CSPAlertHelper.swift */; };
 		087286A41DB66F5C00FB76CA /* CSPFBLoginManeger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087286A31DB66F5C00FB76CA /* CSPFBLoginManeger.swift */; };
 		088B283B1DF9C0AE0047335A /* CSPQRCodeReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088B283A1DF9C0AE0047335A /* CSPQRCodeReaderViewController.swift */; };
+		08ACE5851E01CE810003803B /* CSPInvitedCheckListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08ACE5841E01CE810003803B /* CSPInvitedCheckListViewController.swift */; };
+		08ACE5881E01D18B0003803B /* CSPCheckListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08ACE5861E01D18B0003803B /* CSPCheckListTableViewCell.swift */; };
+		08ACE5891E01D18B0003803B /* CSPCheckListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 08ACE5871E01D18B0003803B /* CSPCheckListTableViewCell.xib */; };
+		08ACE58C1E01E9C40003803B /* CSPGuest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08ACE58B1E01E9C40003803B /* CSPGuest.swift */; };
 		731B100F1DB1DDE5008AB810 /* CSPLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731B100E1DB1DDE5008AB810 /* CSPLoginViewController.swift */; };
 		737E4FB51DE2993000129A8E /* CSPFBTokenSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737E4FB41DE2993000129A8E /* CSPFBTokenSession.swift */; };
 		73C03B1D1DCA1656000B1C3B /* CSPFBUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C03B1C1DCA1656000B1C3B /* CSPFBUser.swift */; };
@@ -52,6 +56,10 @@
 		087286A11DB65D3200FB76CA /* CSP.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CSP.entitlements; sourceTree = "<group>"; };
 		087286A31DB66F5C00FB76CA /* CSPFBLoginManeger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSPFBLoginManeger.swift; sourceTree = "<group>"; };
 		088B283A1DF9C0AE0047335A /* CSPQRCodeReaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSPQRCodeReaderViewController.swift; sourceTree = "<group>"; };
+		08ACE5841E01CE810003803B /* CSPInvitedCheckListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSPInvitedCheckListViewController.swift; sourceTree = "<group>"; };
+		08ACE5861E01D18B0003803B /* CSPCheckListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSPCheckListTableViewCell.swift; sourceTree = "<group>"; };
+		08ACE5871E01D18B0003803B /* CSPCheckListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CSPCheckListTableViewCell.xib; sourceTree = "<group>"; };
+		08ACE58B1E01E9C40003803B /* CSPGuest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSPGuest.swift; sourceTree = "<group>"; };
 		1454B883E65413990343439A /* Pods-CSP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CSP.release.xcconfig"; path = "Pods/Target Support Files/Pods-CSP/Pods-CSP.release.xcconfig"; sourceTree = "<group>"; };
 		2868DAF9BFA28945A21DCC6F /* Pods_CSP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CSP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		731B100E1DB1DDE5008AB810 /* CSPLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = CSPLoginViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -119,6 +127,15 @@
 			name = Utils;
 			sourceTree = "<group>";
 		};
+		08ACE58A1E01D1930003803B /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				08ACE5861E01D18B0003803B /* CSPCheckListTableViewCell.swift */,
+				08ACE5871E01D18B0003803B /* CSPCheckListTableViewCell.xib */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
 		731B100B1DB1DD6F008AB810 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +144,7 @@
 				73C03B241DCABA7F000B1C3B /* CSPFBCoverPicture.swift */,
 				73D364FF1DCE695D0083826F /* CSPCurrentUser.swift */,
 				737E4FB41DE2993000129A8E /* CSPFBTokenSession.swift */,
+				08ACE58B1E01E9C40003803B /* CSPGuest.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -137,6 +155,7 @@
 				731B100E1DB1DDE5008AB810 /* CSPLoginViewController.swift */,
 				73C03B201DCA2BA7000B1C3B /* CSPHomeViewController.swift */,
 				088B283A1DF9C0AE0047335A /* CSPQRCodeReaderViewController.swift */,
+				08ACE5841E01CE810003803B /* CSPInvitedCheckListViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -152,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				73D364FD1DCE4FAE0083826F /* CSPLoading.xib */,
+				08ACE58A1E01D1930003803B /* Cells */,
 			);
 			name = Xibs;
 			sourceTree = "<group>";
@@ -340,6 +360,7 @@
 				73FE035A1DA1FAC0003C321E /* Assets.xcassets in Resources */,
 				73FE03581DA1FAC0003C321E /* Main.storyboard in Resources */,
 				73D364FE1DCE4FAE0083826F /* CSPLoading.xib in Resources */,
+				08ACE5891E01D18B0003803B /* CSPCheckListTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,12 +485,15 @@
 				73C03B1F1DCA17C1000B1C3B /* CSPFBPictureProfile.swift in Sources */,
 				73C03B251DCABA7F000B1C3B /* CSPFBCoverPicture.swift in Sources */,
 				73D365001DCE695D0083826F /* CSPCurrentUser.swift in Sources */,
+				08ACE58C1E01E9C40003803B /* CSPGuest.swift in Sources */,
 				73C03B231DCA324C000B1C3B /* CSPMenuOptions.swift in Sources */,
 				731B100F1DB1DDE5008AB810 /* CSPLoginViewController.swift in Sources */,
 				088B283B1DF9C0AE0047335A /* CSPQRCodeReaderViewController.swift in Sources */,
 				087286A41DB66F5C00FB76CA /* CSPFBLoginManeger.swift in Sources */,
 				73C03B1D1DCA1656000B1C3B /* CSPFBUser.swift in Sources */,
 				737E4FB51DE2993000129A8E /* CSPFBTokenSession.swift in Sources */,
+				08ACE5881E01D18B0003803B /* CSPCheckListTableViewCell.swift in Sources */,
+				08ACE5851E01CE810003803B /* CSPInvitedCheckListViewController.swift in Sources */,
 				0848E5D01DFC86BD005788E1 /* CSPInternetHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -627,6 +651,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = CSP.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = W2JS3YXSKF;
 				INFOPLIST_FILE = "$(SRCROOT)/CSP/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -645,6 +670,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = CSP.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = W2JS3YXSKF;
 				INFOPLIST_FILE = "$(SRCROOT)/CSP/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;

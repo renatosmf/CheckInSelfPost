@@ -15,6 +15,8 @@ class CSPQRCodeReaderViewController: UIViewController, AVCaptureMetadataOutputOb
     var captureSession:AVCaptureSession?
     var videoPreviewLayer:AVCaptureVideoPreviewLayer?
     var qrCodeFrameView:UIView?
+    var codeFrameView : UIView?
+    var invitedList : [CSPGuest] = []
     
     // Added to support different barcodes
     let supportedBarCodes = [AVMetadataObjectTypeQRCode, AVMetadataObjectTypeCode128Code, AVMetadataObjectTypeCode39Code, AVMetadataObjectTypeCode93Code, AVMetadataObjectTypeUPCECode, AVMetadataObjectTypePDF417Code, AVMetadataObjectTypeEAN13Code, AVMetadataObjectTypeAztecCode]
@@ -25,6 +27,68 @@ class CSPQRCodeReaderViewController: UIViewController, AVCaptureMetadataOutputOb
 
         // Do any additional setup after loading the view.
 
+      self.statrCamera()
+
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.qrCodeFrameView?.removeFromSuperview()
+        
+        if captureSession != nil {
+            captureSession?.startRunning()
+        }else{
+            self.statrCamera()
+        }
+    }
+
+    
+    
+    func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!) {
+        
+        // Check if the metadataObjects array is not nil and it contains at least one object.
+        if metadataObjects == nil || metadataObjects.count == 0 {
+            qrCodeFrameView?.frame = .zero
+            NSLog("No barcode/QR code is detected")
+            return
+        }
+        
+        // Get the metadata object.
+        let metadataObj = metadataObjects[0] as! AVMetadataMachineReadableCodeObject
+        
+        // Here we use filter method to check if the type of metadataObj is supported
+        // Instead of hardcoding the AVMetadataObjectTypeQRCode, we check if the type
+        // can be found in the array of supported bar codes.
+       
+        if supportedBarCodes.contains(metadataObj.type) {
+           
+            //        if metadataObj.type == AVMetadataObjectTypeQRCode {
+            // If the found metadata is equal to the QR code metadata then update the status label's text and set the bounds
+           
+            let barCodeObject = videoPreviewLayer?.transformedMetadataObject(for: metadataObj)
+            qrCodeFrameView?.frame = barCodeObject!.bounds
+            
+            if metadataObj.stringValue != nil {
+                NSLog("QRCode text : %@", metadataObj.stringValue)
+                
+                self.goToNextScreen()
+                captureSession?.stopRunning()
+                return
+            }
+        }
+
+    }
+    
+    
+    func statrCamera() {
+        
         // Get an instance of the AVCaptureDevice class to initialize a device object and provide the video
         // as the media type parameter.
         let captureDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
@@ -58,16 +122,18 @@ class CSPQRCodeReaderViewController: UIViewController, AVCaptureMetadataOutputOb
             captureSession?.startRunning()
             
             // Move the message label to the top view
-           // view.bringSubviewToFront(messageLabel)
+            // view.bringSubviewToFront(messageLabel)
             
             // Initialize QR Code Frame to highlight the QR code
             qrCodeFrameView = UIView()
             
-            if let qrCodeFrameView = qrCodeFrameView {
-                qrCodeFrameView.layer.borderColor = UIColor.green.cgColor
-                qrCodeFrameView.layer.borderWidth = 2
-                view.addSubview(qrCodeFrameView)
-                view.bringSubview(toFront:qrCodeFrameView)
+            codeFrameView = qrCodeFrameView
+            
+            if codeFrameView != nil {
+                codeFrameView?.layer.borderColor = UIColor.green.cgColor
+                codeFrameView?.layer.borderWidth = 2
+                view.addSubview(codeFrameView!)
+                view.bringSubview(toFront:codeFrameView!)
             }
             
         } catch {
@@ -75,52 +141,23 @@ class CSPQRCodeReaderViewController: UIViewController, AVCaptureMetadataOutputOb
             print(error)
             return
         }
-
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        self.navigationController?.navigationBar.backItem?.title = " "
-
-    }
-
     
-    
-    func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!) {
+    func goToNextScreen() {
         
-        // Check if the metadataObjects array is not nil and it contains at least one object.
-        if metadataObjects == nil || metadataObjects.count == 0 {
-            qrCodeFrameView?.frame = .zero
-            NSLog("No barcode/QR code is detected")
-            return
-        }
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "invitedCheckInVCIdentifier") as? CSPInvitedCheckListViewController
+        nextViewController?.invitedList = invitedList
         
-        // Get the metadata object.
-        let metadataObj = metadataObjects[0] as! AVMetadataMachineReadableCodeObject
-        
-        // Here we use filter method to check if the type of metadataObj is supported
-        // Instead of hardcoding the AVMetadataObjectTypeQRCode, we check if the type
-        // can be found in the array of supported bar codes.
-        if supportedBarCodes.contains(metadataObj.type) {
-            //        if metadataObj.type == AVMetadataObjectTypeQRCode {
-            // If the found metadata is equal to the QR code metadata then update the status label's text and set the bounds
-            let barCodeObject = videoPreviewLayer?.transformedMetadataObject(for: metadataObj)
-            qrCodeFrameView?.frame = barCodeObject!.bounds
+        if nextViewController != nil {
             
-            if metadataObj.stringValue != nil {
-                NSLog("QRCode text : %@", metadataObj.stringValue)
-            }
-        }
+            self.navigationItem.backBarButtonItem = UIBarButtonItem(title: " ", style: .plain, target: nil, action: nil)
 
+            self.navigationController?.pushViewController(nextViewController!, animated: true)
+        }
     }
-    
     
     /*
     // MARK: - Navigation

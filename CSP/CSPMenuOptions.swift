@@ -30,7 +30,7 @@ class CSPMenuOptions: NSObject {
 
         let cspMenu = CSPMenuOptions()
         
-        let m1 = menu.init(icName: nil, title: "Check-In de convidados", NavToScreenName: "CSPCheckIn")
+        let m1 = menu.init(icName: nil, title: "Check-In de convidados", NavToScreenName: "QRCodeVCIdentifier")
         let m2 = menu.init(icName: nil, title: "Selfie com os Noivos", NavToScreenName: "CSPSelfieWithBrideAndGroom")
         
         cspMenu.listMenu = [m1, m2]

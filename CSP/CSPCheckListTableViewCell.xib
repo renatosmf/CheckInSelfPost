@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="invitedCell" rowHeight="68" id="KGk-i7-Jjw" customClass="CSPCheckListTableViewCell" customModule="CSP" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="68"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="67"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome Convidado" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0dI-IY-BFN">
+                        <rect key="frame" x="63" y="14" width="236" height="41"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jip-9d-EAq">
+                        <rect key="frame" x="15" y="18" width="32" height="32"/>
+                        <state key="normal" image="checkbox_7_off"/>
+                        <state key="disabled" image="checkbox_7_off"/>
+                        <state key="selected" image="checkbox_7_on"/>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottomMargin" secondItem="0dI-IY-BFN" secondAttribute="bottom" constant="4" id="7QQ-km-P9M"/>
+                    <constraint firstItem="jip-9d-EAq" firstAttribute="centerY" secondItem="0dI-IY-BFN" secondAttribute="centerY" id="9rH-bV-7Wv"/>
+                    <constraint firstItem="0dI-IY-BFN" firstAttribute="leading" secondItem="jip-9d-EAq" secondAttribute="trailing" constant="16" id="ASB-WH-hc4"/>
+                    <constraint firstItem="0dI-IY-BFN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="55" id="K3N-Nh-sPr"/>
+                    <constraint firstItem="0dI-IY-BFN" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="6" id="PUr-hI-KJk"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="0dI-IY-BFN" secondAttribute="trailing" constant="13" id="YCe-gX-lVl"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="btCheck" destination="jip-9d-EAq" id="r6a-2q-pOM"/>
+                <outlet property="lbInvitedName" destination="0dI-IY-BFN" id="Z3A-6b-bvK"/>
+            </connections>
+            <point key="canvasLocation" x="34" y="66"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="checkbox_7_off" width="32" height="32"/>
+        <image name="checkbox_7_on" width="32" height="32"/>
+    </resources>
+</document>

@@ -130,6 +130,7 @@ class CSPHomeViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
         
         if nextViewController != nil {
+
             self.navigationController?.pushViewController(nextViewController!, animated: true)
         }
 
